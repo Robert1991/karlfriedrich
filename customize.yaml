@@ -1,0 +1,7 @@
+# Dining Room Lights
+light.hue_iris_bubble:
+  friendly_name: "Philips Hue Licht Kugel"
+  icon: mdi:wall-sconce-round-variant
+
+light.esszimmer_kronleuchter:
+  icon: "mdi:vanity-light"

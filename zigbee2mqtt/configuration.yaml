@@ -1,0 +1,24 @@
+homeassistant: true
+permit_join: false
+mqtt:
+  base_topic: zigbee2mqtt
+  server: mqtt://karlfriedrich
+  user: zigbee2mqtt
+  password: "!secret mqtt_password"
+advanced:
+  channel: 12
+devices:
+  "0x00124b00077d28e9":
+    friendly_name: Skimmer Schalter Garten
+  "0xbc33acfffe64ad55":
+    friendly_name: Repeater 1
+  "0xbc33acfffe113c21":
+    friendly_name: Repeater 2
+  "0x0017880109e65105":
+    friendly_name: Hue Iris Bubble Tragbar
+  "0x00178801001235e3":
+    friendly_name: Hue Iris Bubble
+  "0x001788010802b61a":
+    friendly_name: Hue Smart Button 1
+  "0x00124b0002ccc756":
+    friendly_name: "Innenhaelterung Stecker 1"

@@ -1,0 +1,186 @@
+decluttering_templates:
+  espHomeDeviceInfoRow:
+    variables:
+      - device_display_name: Bedroom Sensor 1
+      - device_name: bedroom_sensor
+      - navigate_to: bedroom
+    card:
+      type: 'custom:multiple-entity-row'
+      entity: 'binary_sensor.[[device_name]]_connection_status'
+      name: '[[device_display_name]]'
+      show_state: true
+      state_color: true
+      tap_action:
+        action: navigate
+        navigation_path: '/lovelace-device/[[navigate_to]]'
+      entities:
+        - name: Update
+          entity: 'binary_sensor.[[device_name]]_update_available'
+
+  zigbeeBatteryDeviceInfoRow:
+    variables:
+      - device_display_name: Bedroom Sensor 1
+      - device_name: bedroom_sensor
+    card:
+      type: 'custom:multiple-entity-row'
+      entity: 'sensor.[[device_name]]_battery'
+      name: '[[device_display_name]]'
+      tap_action:
+        action: navigate
+        navigation_path: /lovelace-device/zigbee_network
+      entities:
+        - name: Update
+          entity: 'binary_sensor.[[device_name]]_update_available'
+        - name: Linkquality
+          entity: 'sensor.[[device_name]]_linkquality'
+  zigbeeDeviceInfoRow:
+    variables:
+      - device_display_name: Bedroom Sensor 1
+      - device_name: bedroom_sensor
+    card:
+      type: 'custom:multiple-entity-row'
+      entity: 'sensor.[[device_name]]_linkquality'
+      name: '[[device_display_name]]'
+      tap_action:
+        action: navigate
+        navigation_path: /lovelace-device/zigbee_network
+      entities:
+        - name: Update
+          entity: binary_sensor.[[device_name]]_update_available
+  zigbeeDeviceEntities:
+    variables:
+      - device_display_name: Bedroom Closet Led Power Supply Light
+    card:
+        type: 'custom:auto-entities'
+        filter:
+          include:
+            - device: '/[[device_display_name]]/'
+        card:
+          type: 'custom:fold-entity-row'
+          head:
+            type: section
+            label: '[[device_display_name]]'
+  device_overview_template:
+    variables:
+      - sensor_display_name: Bedroom Sensor 1
+      - sensor_name: bedroom_sensor
+    card:
+      type: 'custom:vertical-stack-in-card'
+      title: '[[sensor_display_name]]'
+      cards:
+        - type: entities
+          state_color: true
+          show_header_toggle: false
+          title: null
+          entities:
+            - entity: 'binary_sensor.[[sensor_name]]_connection_status'
+              name: Device Status
+              secondary_info: last-updated
+              icon: 'hass:server-network'
+            - entity: 'sensor.[[sensor_name]]_uptime'
+              name: Uptime
+            - entity: 'sensor.[[sensor_name]]_wifi_signal'
+              name: Wifi Signal
+            - entity: 'alert.[[sensor_name]]_is_offline'
+              name: Offline Alert
+            - entity: 'switch.[[sensor_name]]_restart'
+              name: Restart
+            - entity: 'switch.[[sensor_name]]_shutdown'
+              name: Shutdown
+            - type: button
+              tap_action:
+                action: call-service
+                service: pyscript.run_esp_home_device_update
+                service_data:
+                  esp_home_device_config: '[[sensor_name]].yaml'
+              name: Update Device
+              show_icon: true
+              icon: mdi:update
+              icon_height: 29px
+        - type: 'custom:uptime-card'
+          entity: 'binary_sensor.[[sensor_name]]_connection_status'
+          name: Uptime
+          hours_to_show: 144
+          ko: unavailable
+          status_adaptive_color: true
+          title_adaptive_color: false
+          icon_adaptive_color: true
+          ok: 'on'
+          alias:
+            ok: online
+            ko: offline
+        - type: custom:auto-entities
+          filter:
+            include:
+              - domain: light
+                entity_id: '*[[sensor_name]]*'
+              - domain: sensor
+                entity_id: '*[[sensor_name]]*'
+              - domain: binary_sensor
+                entity_id: '*[[sensor_name]]*'
+              - domain: switch
+                entity_id: '*[[sensor_name]]*'
+          card:
+            type: custom:fold-entity-row
+            head:
+              type: section
+              label: Entities
+
+title: Devices
+views:
+  - title: Zigbee2MQTT
+    path: zigbee2mqtt
+    badges: []
+    cards:
+    - type: entities
+      show_header_toggle: false
+      entities:
+        - entity: sensor.zigbee2mqtt_bridge_state
+        - entity: sensor.zigbee2mqtt_version
+        - entity: sensor.coordinator_version
+        - entity: input_select.zigbee2mqtt_log_level
+        - type: divider
+        - entity: switch.zigbee2mqtt_main_join
+        - entity: input_number.zigbee2mqtt_join_minutes
+        - entity: timer.zigbee_permit_join
+        - type: divider
+        - entity: input_text.zigbee2mqtt_old_name
+        - entity: input_text.zigbee2mqtt_new_name
+        - entity: script.zigbee2mqtt_rename
+        - type: divider
+        - entity: input_text.zigbee2mqtt_update_name
+        - entity: script.zigbee2mqtt_update
+        - type: divider
+        - entity: input_text.zigbee2mqtt_remove
+        - entity: input_boolean.zigbee2mqtt_force_remove
+        - entity: script.zigbee2mqtt_remove
+  - title: Zigbee Network
+    path: zigbee_network
+    panel: true # this renders the first card on full width, other cards in this view will not be rendered
+    cards:
+    - type: 'custom:vertical-stack-in-card'
+      cards:
+        - type: 'custom:zigbee2mqtt-networkmap'
+          entity: sensor.zigbee2mqtt_networkmap
+          # the following are optional:
+          mqtt_base_topic: zigbee2mqtt # if you change base_topic of Zigbee2mqtt, change it accordingly
+          force: 3000 # decrease it to get smaller map if you have many devices
+          node_size: 16
+          font_size: 12
+          link_width: 2
+          height: 400 # height of the card
+          # use this css config or use whatever css tech to change look and feel,
+          # the same variable can also be used in Home Assistant themes, see https://www.home-assistant.io/components/frontend/#defining-themes
+          css: |
+            :host {
+              --zigbee2mqtt-networkmap-node-color: rgba(18, 120, 98, .7);
+              --zigbee2mqtt-networkmap-node-fill-color: #dcfaf3;
+              --zigbee2mqtt-networkmap-node-pinned-color: rgba(190, 56, 93, .6);
+              --zigbee2mqtt-networkmap-link-color: rgba(18, 120, 98, .5);
+              --zigbee2mqtt-networkmap-hover-color: #be385d;
+              --zigbee2mqtt-networkmap-link-selected-color: rgba(202, 164, 85, .6);
+              --zigbee2mqtt-networkmap-label-color: #127862;
+              --zigbee2mqtt-networkmap-arrow-color: rgba(18, 120, 98, 0.7);
+              --zigbee2mqtt-networkmap-node-coordinator-color: rgba(224, 78, 93, .7);
+              --zigbee2mqtt-networkmap-node-router-color: rgba(0, 165, 255, .7);
+            }

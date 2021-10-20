@@ -1,0 +1,41 @@
+- platform: mqtt
+  name: "water_temperature_pond"
+  state_topic: "MobileAlerts/066f14a80769/json"
+  unit_of_measurement: "°C"
+  value_template: "{{value_json.waterTemperature[0]}}"
+  icon: mdi:thermometer
+
+- platform: mqtt
+  name: "temperature_glasshouse"
+  state_topic: "MobileAlerts/066f14a80769/json"
+  unit_of_measurement: "°C"
+  value_template: "{{value_json.temperature[0]}}"
+  icon: mdi:thermometer
+
+- platform: mqtt
+  name: "humidity_glasshouse"
+  state_topic: "MobileAlerts/066f14a80769/json"
+  unit_of_measurement: "%"
+  value_template: "{{value_json.humidity[0]}}"
+  icon: mdi:water-percent
+
+- platform: mqtt
+  name: "humidity_inner_pool"
+  state_topic: "MobileAlerts/036ee76b36bb/json"
+  unit_of_measurement: "%"
+  value_template: "{{value_json.humidity[0]}}"
+  icon: mdi:water-percent
+
+- platform: mqtt
+  name: "temperature_inner_pool"
+  state_topic: "MobileAlerts/036ee76b36bb/json"
+  unit_of_measurement: "°C"
+  value_template: "{{value_json.temperature[0]}}"
+  icon: mdi:thermometer
+
+- platform: mqtt
+  name: "temperature_breakfast_room"
+  state_topic: "MobileAlerts/02696076ba61/json"
+  unit_of_measurement: "°C"
+  value_template: "{{value_json.temperature[0]}}"
+  icon: mdi:thermometer

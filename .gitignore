@@ -1,0 +1,21 @@
+# home assistant
+secrets.yaml
+tmp/
+.storage/*
+custom_components/*
+home-assistant.*
+home-assistant_v2.*
+.vscode/*
+*.pyc
+appdaemon/
+blueprints/**/homeassistant/
+passwd.dat
+.shopping_list.json
+.ssh/
+
+# zigbee2mqtt
+zigbee2mqtt/log/
+zigbee2mqtt/database.db
+zigbee2mqtt/secret.yaml
+zigbee2mqtt/state.json
+zigbee2mqtt/coordinator_backup.json

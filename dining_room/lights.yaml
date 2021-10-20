@@ -1,0 +1,7 @@
+- platform: group
+  name: Esszimmer Kronleuchter
+  entities:
+    - light.esszimmer_1
+    - light.esszimmer_2
+    - light.esszimmer_3
+    - light.esszimmer_4

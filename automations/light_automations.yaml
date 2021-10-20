@@ -1,0 +1,17 @@
+- alias: Turn On Dining Room Lights at Given Time
+  trigger:
+    - platform: time
+      at: input_datetime.light_dining_room_turn_on_time
+  action:
+    - service: light.turn_on
+      target:
+        entity_id: light.esszimmer_kronleuchter
+
+- alias: Turn Off Dining Room Lights at Given Time
+  trigger:
+    - platform: time
+      at: input_datetime.light_dining_room_turn_off_time
+  action:
+    - service: light.turn_off
+      target:
+        entity_id: light.esszimmer_kronleuchter
