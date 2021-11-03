@@ -33,6 +33,7 @@ input_text: !include_dir_merge_named input/input_text/
 input_datetime: !include_dir_merge_named input/input_datetime/
 
 light dining_room: !include dining_room/lights.yaml
+light general: !include general/lights.yaml
 
 logger:
   default: warning
@@ -70,6 +71,8 @@ sensor zigbee2mqtt: !include zigbee2mqtt/sensors.yaml
 sensor mobile_alerts: !include mobile_alerts_sensors.yaml
 
 switch general: !include zigbee2mqtt/switches.yaml
+
+template: !include_dir_merge_list template/
 
 timer:
   zigbee_permit_join:

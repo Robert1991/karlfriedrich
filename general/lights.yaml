@@ -1,0 +1,11 @@
+- platform: group
+  name: Lower Floor Living Quarters Lights
+  entities:
+    - light.esszimmer_1
+    - light.esszimmer_2
+    - light.esszimmer_3
+    - light.esszimmer_4
+    - light.wohnzimmer_buffet_lampe
+    - light.wohnzimmer_sofa_leselampe
+    - light.fruhstuckszimmer_wandlampe_1
+    - light.hue_iris_bubble
