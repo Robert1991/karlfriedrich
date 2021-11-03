@@ -1,0 +1,11 @@
+allow_all_imports: true
+hass_is_global: true
+apps:
+  netatmo_event_logger:
+    event_log: /config/tmp/netatmo_event.log
+    cameras:
+      - name: outside_camera_garage
+        id: 70:ee:50:3d:4e:de
+      - name: inside_camera_dining_room
+        id: 70:ee:50:53:a0:e7
+    max_snapshots: 100

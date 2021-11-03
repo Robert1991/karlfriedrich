@@ -1,0 +1,12 @@
+- trigger:
+    - platform: event
+      event_type: netatmo_event
+      event_data:
+        type: human
+        device_id: 3586b553bd29f3ab726926528aa2b67f
+  binary_sensor:
+    - name: Movement detected in front of garage
+      auto_off: 5
+      state: "true"
+      attributes:
+        snapshot_url: "{{ trigger.event.data.data.snapshot_url }}"

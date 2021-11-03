@@ -4,6 +4,7 @@ homeassistant:
   elevation: 277
   time_zone: Europe/Berlin
   customize: !include customize.yaml
+  external_url: "https://inyux67ur6gn8mepb1fqn0bwqeb9pkoy.ui.nabu.casa"
 
 tts:
   - platform: google_translate
@@ -37,6 +38,7 @@ logger:
   default: warning
   logs:
     homeassistant.components.mqtt: info
+    custom_components.pyscript: info
 
 lovelace:
   mode: storage
@@ -53,8 +55,14 @@ mqtt:
   username: !secret mqtt_username
   password: !secret mqtt_password
 
+netatmo:
+  client_id: 61702ebecc7f0e0a5a4fb983
+  client_secret: gdEeAxrRlsBtAbxwfPIYqk9b5qh9IvL1BxJWqA
+
 recorder:
   db_url: !secret maria_db_url
+
+pyscript: !include pyscript/config.yaml
 
 script zigbee2mqtt: !include zigbee2mqtt/scripts.yaml
 
