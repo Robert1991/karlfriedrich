@@ -17,9 +17,9 @@ influxdb:
   ssl: false
   port: 8086
   host: karlfriedrich
-  database: home_assistant
+  database: home
   token: !secret influx_token
-  bucket: home_assistant
+  bucket: home
   organization: home
 
 http:
