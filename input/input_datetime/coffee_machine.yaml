@@ -7,3 +7,13 @@ coffee_machine_week_day_off_time:
   name: Kaffee Maschine Ausschlat Uhrzeit
   has_date: false
   has_time: true
+
+coffee_machine_week_day_afternoons_on_time:
+  name: Kaffee Maschine Nachmittag Anschlat Uhrzeit
+  has_date: false
+  has_time: true
+
+coffee_machine_week_day_afternoons_off_time:
+  name: Kaffee Maschine Nachmittag Ausschlat Uhrzeit
+  has_date: false
+  has_time: true
