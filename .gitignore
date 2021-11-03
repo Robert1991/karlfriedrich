@@ -3,6 +3,7 @@ secrets.yaml
 tmp/
 .storage/*
 custom_components/*
+tts/*
 home-assistant.*
 home-assistant_v2.*
 .vscode/*
@@ -12,6 +13,7 @@ blueprints/**/homeassistant/
 passwd.dat
 .shopping_list.json
 .ssh/
+.cloud/
 
 # zigbee2mqtt
 zigbee2mqtt/log/
