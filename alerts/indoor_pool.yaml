@@ -1,0 +1,31 @@
+indoor_pool_pump_1_failure:
+  name: Energie-Abfall Sauerstoffpumpe 1
+  done_message: Energie Sauerstoffpumpe 1 normal
+  entity_id: binary_sensor.oxygen_pump_1_power_low
+  state: "on"
+  repeat:
+    - 2
+    - 5
+    - 15
+    - 30
+    - 120
+  can_acknowledge: true
+  skip_first: true
+  notifiers:
+    - ios
+
+indoor_pool_pump_2_failure:
+  name: Energie-Abfall Sauerstoffpumpe 2
+  done_message: Energie Sauerstoffpumpe 2 normal
+  entity_id: binary_sensor.oxygen_pump_2_power_low
+  state: "on"
+  repeat:
+    - 2
+    - 5
+    - 15
+    - 30
+    - 120
+  can_acknowledge: true
+  skip_first: true
+  notifiers:
+    - ios

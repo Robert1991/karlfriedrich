@@ -1,0 +1,18 @@
+- platform: template
+  switches:
+    oxygen_pump_switch:
+      icon_template: "{{ 'mdi:pump' }}"
+      turn_on:
+        - service: switch.turn_on
+          target:
+            entity_id: switch.oxygen_pump_switch_1
+        - service: switch.turn_on
+          target:
+            entity_id: switch.oxygen_pump_switch_2
+      turn_off:
+        - service: switch.turn_off
+          target:
+            entity_id: switch.oxygen_pump_switch_1
+        - service: switch.turn_off
+          target:
+            entity_id: switch.oxygen_pump_switch_2

@@ -9,7 +9,9 @@ advanced:
   channel: 12
 devices:
   "0x00124b00077d28e9":
-    friendly_name: Skimmer Schalter Garten
+    friendly_name: Oxygen Pump Switch 1
+  "0x00124b0002ccc756":
+    friendly_name: Oxygen Pump Switch 2
   "0xbc33acfffe64ad55":
     friendly_name: Repeater 1
   "0xbc33acfffe113c21":
@@ -20,5 +22,3 @@ devices:
     friendly_name: Hue Iris Bubble
   "0x001788010802b61a":
     friendly_name: Hue Smart Button 1
-  "0x00124b0002ccc756":
-    friendly_name: "Innenhaelterung Stecker 1"

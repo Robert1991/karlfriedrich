@@ -9,3 +9,8 @@ apps:
       - name: inside_camera_dining_room
         id: 70:ee:50:53:a0:e7
     max_snapshots: 100
+  timer_switch_controller:
+    - button_sensor: sensor.hue_smart_button_1_action
+      switch_entity: switch.oxygen_pump_switch
+      timer_entity: timer.reactivated_oxygen_pump_timer
+      timeout_entity: input_number.reactivate_oxygen_pump_timeout

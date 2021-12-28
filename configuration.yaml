@@ -9,6 +9,8 @@ homeassistant:
 tts:
   - platform: google_translate
 
+alert: !include_dir_merge_named alerts/
+
 automation zigbee2mqtt: !include zigbee2mqtt/automations.yaml
 automation coffee_machine: !include automations/coffee_machine.yaml
 automation lights: !include automations/light_automations.yaml
@@ -60,6 +62,12 @@ netatmo:
   client_id: 61702ebecc7f0e0a5a4fb983
   client_secret: gdEeAxrRlsBtAbxwfPIYqk9b5qh9IvL1BxJWqA
 
+notify ios:
+  - name: iOS
+    platform: group
+    services:
+      - service: mobile_app_guidos_iphone
+
 recorder:
   db_url: !secret maria_db_url
 
@@ -71,6 +79,7 @@ sensor zigbee2mqtt: !include zigbee2mqtt/sensors.yaml
 sensor mobile_alerts: !include mobile_alerts_sensors.yaml
 
 switch general: !include zigbee2mqtt/switches.yaml
+switch indoor_pool: !include indoor_pool/switches.yaml
 
 template: !include_dir_merge_list template/
 
@@ -78,6 +87,8 @@ timer:
   zigbee_permit_join:
     name: Time remaining
     duration: 120
+  reactivated_oxygen_pump_timer:
+    duration: "00:00:00"
 
 zone:
   - name: Home
