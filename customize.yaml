@@ -5,3 +5,35 @@ light.hue_iris_bubble:
 
 light.esszimmer_kronleuchter:
   icon: "mdi:vanity-light"
+
+
+light.fruhstuckszimmer_wandlampe_1:
+  icon: "mdi:candle"
+
+light.wohnzimmer_sofa_leselampe:
+  friendly_name: "Lampe auf Kommode"
+  icon: "mdi:lamp"
+
+light.hue_iris_bubble_tragbar:
+  friendly_name: "Philips Hue Licht Kugel Tragbar"
+  icon: mdi:wall-sconce-round-variant
+
+light.hue_white_lamp_1:
+  friendly_name: Wohnzimmmer Stehlampe 1
+  icon: mdi:floor-lamp
+
+light.hue_white_lamp_1_2:
+  friendly_name: Wohnzimmmer Stehlampe 2
+  icon: mdi:floor-lamp
+
+light.hue_lily_outdoor_spotlight_1:
+  friendly_name: Garten Spot 1
+  icon: mdi:track-light
+
+light.hue_lily_outdoor_spotlight_2:
+  friendly_name: Garten Spot 2
+  icon: mdi:track-light
+
+light.hue_lily_outdoor_spotlight_3:
+  friendly_name: Garten Spot 3
+  icon: mdi:track-light
