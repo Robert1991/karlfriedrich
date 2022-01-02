@@ -32,11 +32,10 @@ def log_netatmo_event_to_file(event, event_time, event_file_path):
 @pyscript_executor
 def download_snapshot(snapshot_url, folder_path, time_stamp, max_snapshots):
     Path(folder_path).mkdir(parents=True, exist_ok=True)
-    url_request.urlretrieve(snapshot_url, folder_path + "/last.jpg")
     file_time_stamp = datetime.datetime.fromtimestamp(
         time_stamp).strftime('%Y%m%d-%H%M%S')
-    copyfile(folder_path + "/last.jpg", folder_path +
-             "/" + file_time_stamp + ".jpg")
+    url_request.urlretrieve(snapshot_url,
+                            folder_path + "/" + file_time_stamp + ".jpg")
     clean_up_folder(folder_path, max_snapshots)
 
 
@@ -47,8 +46,11 @@ def log_netatmo_event(event_data, event_time, cameras, event_log_path, max_snaps
                 event_type = event_data["event_type"]
                 picture_folder_path = "/config/tmp/" + \
                     camera["name"] + "/" + event_type + "/"
-                download_snapshot(
-                    event_data["snapshot_url"], picture_folder_path, event_time, max_snapshots)
+                if "snapshot_url" in event_data:
+                    download_snapshot(
+                        event_data["snapshot_url"], picture_folder_path, event_time, max_snapshots)
+                else:
+                    log.info("No downloadable snapshot")
     log_netatmo_event_to_file(event_data, event_time, event_log_path)
 
 
