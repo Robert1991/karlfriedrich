@@ -6,6 +6,8 @@ light.hue_iris_bubble:
 light.esszimmer_kronleuchter:
   icon: "mdi:vanity-light"
 
+switch.steckdose_kaffeemaschine:
+  icon: "mdi:coffee-maker"
 
 light.fruhstuckszimmer_wandlampe_1:
   icon: "mdi:candle"
@@ -37,3 +39,6 @@ light.hue_lily_outdoor_spotlight_2:
 light.hue_lily_outdoor_spotlight_3:
   friendly_name: Garten Spot 3
   icon: mdi:track-light
+
+light.netatmo_aussenkamera_garage:
+  icon: mdi:cctv
