@@ -1,4 +1,0 @@
-turn_on_lower_floor_lights_before_sunset_offset:
-  name: Turn On Lower Floor Lights Before Sunset Offset
-  has_date: false
-  has_time: true

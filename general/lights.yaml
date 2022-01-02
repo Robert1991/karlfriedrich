@@ -11,3 +11,10 @@
     - light.hue_iris_bubble
     - light.hue_white_lamp_1
     - light.hue_white_lamp_1_2
+
+- platform: group
+  name: Garden Lights
+  entities:
+    - light.hue_lily_outdoor_spotlight_1
+    - light.hue_lily_outdoor_spotlight_2
+    - light.hue_lily_outdoor_spotlight_3

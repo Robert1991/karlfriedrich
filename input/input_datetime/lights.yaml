@@ -1,9 +1,9 @@
-light_dining_room_turn_on_time:
-  name: Esszimmer Licht An Uhrzeit
+light_dining_room_turn_off_time:
+  name: Esszimmer Licht Aus Uhrzeit
   has_date: false
   has_time: true
 
-light_dining_room_turn_off_time:
-  name: Esszimmer Licht Aus Uhrzeit
+garden_light_turn_off_time:
+  name: Garden Light Turn Off Time
   has_date: false
   has_time: true
