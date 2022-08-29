@@ -1,0 +1,5 @@
+- sensor:
+    - name: DuckDns Access Token
+      state: !secret duckdns_key
+    - name: DuckDns Domain
+      state: !secret duckdns_domain

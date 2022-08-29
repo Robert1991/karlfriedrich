@@ -1,0 +1,10 @@
+- alias: Update DuckDNS
+  trigger:
+    - platform: state
+      entity_id: sensor.fritz_box_7590_external_ip
+  action:
+    - service: pyscript.update_duckdns_ipaddress
+      data:
+        duckdns_domain: !secret duckdns_domain
+        duckdns_token: !secret duckdns_key
+

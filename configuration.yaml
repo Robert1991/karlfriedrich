@@ -11,7 +11,7 @@ tts:
 
 alert: !include_dir_merge_named alerts/
 
-automation zigbee2mqtt: !include zigbee2mqtt/automations.yaml
+automation administration: !include automations/administration.yaml
 automation coffee_machine: !include automations/coffee_machine.yaml
 automation lights: !include automations/light_automations.yaml
 
@@ -82,6 +82,12 @@ switch general: !include zigbee2mqtt/switches.yaml
 switch indoor_pool: !include indoor_pool/switches.yaml
 
 template: !include_dir_merge_list template/
+
+rest_command:
+  refresh_duckdns_ip:
+    url: >
+      {{ "https://www.duckdns.org/update?domains=" + states('sensor.duckdns_domain') + "&token=" + states('sensor.duckdns_access_token') + "&ip=" + states("sensor.fritz_box_7590_external_ip") }}"
+    method: GET
 
 timer:
   zigbee_permit_join:
