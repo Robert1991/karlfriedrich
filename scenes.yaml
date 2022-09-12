@@ -1,0 +1,457 @@
+- name: Lower Living Quarters 1
+  entities:
+    light.esszimmer_1:
+      min_mireds: 153
+      max_mireds: 500
+      supported_color_modes:
+        - color_temp
+        - xy
+      color_mode: color_temp
+      brightness: 3
+      color_temp: 366
+      hs_color:
+        - 28.327
+        - 64.71
+      rgb_color:
+        - 255
+        - 167
+        - 89
+      xy_color:
+        - 0.524
+        - 0.387
+      mode: normal
+      dynamics: none
+      friendly_name: Esszimmer 1
+      supported_features: 40
+      state: "on"
+    light.esszimmer_2:
+      min_mireds: 153
+      max_mireds: 500
+      supported_color_modes:
+        - color_temp
+        - xy
+      color_mode: color_temp
+      brightness: 3
+      color_temp: 366
+      hs_color:
+        - 28.327
+        - 64.71
+      rgb_color:
+        - 255
+        - 167
+        - 89
+      xy_color:
+        - 0.524
+        - 0.387
+      mode: normal
+      dynamics: none
+      friendly_name: Esszimmer 2
+      supported_features: 40
+      state: "on"
+    light.esszimmer_3:
+      min_mireds: 153
+      max_mireds: 500
+      supported_color_modes:
+        - color_temp
+        - xy
+      color_mode: color_temp
+      brightness: 3
+      color_temp: 366
+      hs_color:
+        - 28.327
+        - 64.71
+      rgb_color:
+        - 255
+        - 167
+        - 89
+      xy_color:
+        - 0.524
+        - 0.387
+      mode: normal
+      dynamics: none
+      friendly_name: Esszimmer 3
+      supported_features: 40
+      state: "on"
+    light.esszimmer_4:
+      min_mireds: 153
+      max_mireds: 500
+      supported_color_modes:
+        - color_temp
+        - xy
+      color_mode: color_temp
+      brightness: 3
+      color_temp: 366
+      hs_color:
+        - 28.327
+        - 64.71
+      rgb_color:
+        - 255
+        - 167
+        - 89
+      xy_color:
+        - 0.524
+        - 0.387
+      mode: normal
+      dynamics: none
+      friendly_name: Esszimmer 4
+      supported_features: 40
+      state: "on"
+    light.esszimmer_vertico:
+      min_mireds: 153
+      max_mireds: 500
+      supported_color_modes:
+        - color_temp
+        - xy
+      color_mode: color_temp
+      brightness: 133
+      color_temp: 437
+      hs_color:
+        - 29.496
+        - 80.799
+      rgb_color:
+        - 255
+        - 150
+        - 48
+      xy_color:
+        - 0.57
+        - 0.389
+      mode: normal
+      dynamics: none
+      friendly_name: Wohnzimmer Büffet Lampe
+      supported_features: 40
+      state: "on"
+    light.wohnzimmer_buffet_lampe:
+      supported_color_modes:
+        - brightness
+      color_mode: brightness
+      brightness: 66
+      mode: normal
+      dynamics: none
+      friendly_name: Lampe auf Kommode
+      supported_features: 40
+      icon: mdi:lamp
+      state: "on"
+    light.fruhstuckszimmer_wandlampe_1:
+      min_mireds: 153
+      max_mireds: 500
+      supported_color_modes:
+        - color_temp
+        - xy
+      color_mode: color_temp
+      brightness: 42
+      color_temp: 362
+      hs_color:
+        - 28.264
+        - 63.778
+      rgb_color:
+        - 255
+        - 168
+        - 92
+      xy_color:
+        - 0.52
+        - 0.386
+      mode: normal
+      dynamics: none
+      friendly_name: Frühstückszimmer Wandlampe 1
+      supported_features: 40
+      icon: mdi:candle
+      state: "on"
+    light.hue_iris_bubble:
+      effect_list:
+        - blink
+        - breathe
+        - okay
+        - channel_change
+        - finish_effect
+        - stop_effect
+      supported_color_modes:
+        - xy
+      color_mode: xy
+      brightness: 38
+      hs_color:
+        - 29.834
+        - 70.98
+      rgb_color:
+        - 255
+        - 164
+        - 74
+      xy_color:
+        - 0.54
+        - 0.393
+      color:
+        x: 0.54
+        y: 0.393
+      linkquality: 99
+      friendly_name: Philips Hue Licht Kugel
+      supported_features: 61
+      icon: mdi:wall-sconce-round-variant
+      state: "on"
+    light.hue_white_lamp_1:
+      supported_color_modes:
+        - brightness
+      color_mode: brightness
+      brightness: 185
+      mode: normal
+      dynamics: none
+      friendly_name: Wohnzimmmer Stehlampe 1
+      supported_features: 40
+      icon: mdi:floor-lamp
+      state: "on"
+    light.hue_white_lamp_1_2:
+      supported_color_modes:
+        - brightness
+      color_mode: brightness
+      brightness: 185
+      mode: normal
+      dynamics: none
+      friendly_name: Wohnzimmmer Stehlampe 2
+      supported_features: 40
+      icon: mdi:floor-lamp
+      state: "on"
+    light.light_3:
+      supported_color_modes:
+        - brightness
+      mode: normal
+      dynamics: none
+      friendly_name: Bankers Lamp 1
+      supported_features: 40
+      state: "on"
+    light.light_4:
+      supported_color_modes:
+        - brightness
+      color_mode: brightness
+      brightness: 107
+      mode: normal
+      dynamics: none
+      friendly_name: Fensterbank Lampe
+      supported_features: 40
+      state: "off"
+
+- name: Lower Living Quarters 2
+  entities:
+    light.esszimmer_1:
+      min_mireds: 153
+      max_mireds: 500
+      supported_color_modes:
+        - color_temp
+        - xy
+      color_mode: color_temp
+      brightness: 3
+      color_temp: 366
+      hs_color:
+        - 28.327
+        - 64.71
+      rgb_color:
+        - 255
+        - 167
+        - 89
+      xy_color:
+        - 0.524
+        - 0.387
+      mode: normal
+      dynamics: none
+      friendly_name: Esszimmer 1
+      supported_features: 40
+      state: "on"
+    light.esszimmer_2:
+      min_mireds: 153
+      max_mireds: 500
+      supported_color_modes:
+        - color_temp
+        - xy
+      color_mode: color_temp
+      brightness: 3
+      color_temp: 366
+      hs_color:
+        - 28.327
+        - 64.71
+      rgb_color:
+        - 255
+        - 167
+        - 89
+      xy_color:
+        - 0.524
+        - 0.387
+      mode: normal
+      dynamics: none
+      friendly_name: Esszimmer 2
+      supported_features: 40
+      state: "on"
+    light.esszimmer_3:
+      min_mireds: 153
+      max_mireds: 500
+      supported_color_modes:
+        - color_temp
+        - xy
+      color_mode: color_temp
+      brightness: 3
+      color_temp: 366
+      hs_color:
+        - 28.327
+        - 64.71
+      rgb_color:
+        - 255
+        - 167
+        - 89
+      xy_color:
+        - 0.524
+        - 0.387
+      mode: normal
+      dynamics: none
+      friendly_name: Esszimmer 3
+      supported_features: 40
+      state: "on"
+    light.esszimmer_4:
+      min_mireds: 153
+      max_mireds: 500
+      supported_color_modes:
+        - color_temp
+        - xy
+      color_mode: color_temp
+      brightness: 3
+      color_temp: 366
+      hs_color:
+        - 28.327
+        - 64.71
+      rgb_color:
+        - 255
+        - 167
+        - 89
+      xy_color:
+        - 0.524
+        - 0.387
+      mode: normal
+      dynamics: none
+      friendly_name: Esszimmer 4
+      supported_features: 40
+      state: "on"
+    light.esszimmer_vertico:
+      min_mireds: 153
+      max_mireds: 500
+      supported_color_modes:
+        - color_temp
+        - xy
+      color_mode: color_temp
+      brightness: 133
+      color_temp: 437
+      hs_color:
+        - 29.496
+        - 80.799
+      rgb_color:
+        - 255
+        - 150
+        - 48
+      xy_color:
+        - 0.57
+        - 0.389
+      mode: normal
+      dynamics: none
+      friendly_name: Wohnzimmer Büffet Lampe
+      supported_features: 40
+      state: "on"
+    light.wohnzimmer_buffet_lampe:
+      supported_color_modes:
+        - brightness
+      color_mode: brightness
+      brightness: 66
+      mode: normal
+      dynamics: none
+      friendly_name: Lampe auf Kommode
+      supported_features: 40
+      icon: mdi:lamp
+      state: "on"
+    light.fruhstuckszimmer_wandlampe_1:
+      min_mireds: 153
+      max_mireds: 500
+      supported_color_modes:
+        - color_temp
+        - xy
+      color_mode: color_temp
+      brightness: 42
+      color_temp: 362
+      hs_color:
+        - 28.264
+        - 63.778
+      rgb_color:
+        - 255
+        - 168
+        - 92
+      xy_color:
+        - 0.52
+        - 0.386
+      mode: normal
+      dynamics: none
+      friendly_name: Frühstückszimmer Wandlampe 1
+      supported_features: 40
+      icon: mdi:candle
+      state: "on"
+    light.hue_iris_bubble:
+      effect_list:
+        - blink
+        - breathe
+        - okay
+        - channel_change
+        - finish_effect
+        - stop_effect
+      supported_color_modes:
+        - xy
+      color_mode: xy
+      brightness: 38
+      hs_color:
+        - 29.834
+        - 70.98
+      rgb_color:
+        - 255
+        - 164
+        - 74
+      xy_color:
+        - 0.54
+        - 0.393
+      color:
+        x: 0.54
+        y: 0.393
+      linkquality: 99
+      friendly_name: Philips Hue Licht Kugel
+      supported_features: 61
+      icon: mdi:wall-sconce-round-variant
+      state: "on"
+    light.hue_white_lamp_1:
+      supported_color_modes:
+        - brightness
+      color_mode: brightness
+      brightness: 185
+      mode: normal
+      dynamics: none
+      friendly_name: Wohnzimmmer Stehlampe 1
+      supported_features: 40
+      icon: mdi:floor-lamp
+      state: "on"
+    light.hue_white_lamp_1_2:
+      supported_color_modes:
+        - brightness
+      color_mode: brightness
+      brightness: 185
+      mode: normal
+      dynamics: none
+      friendly_name: Wohnzimmmer Stehlampe 2
+      supported_features: 40
+      icon: mdi:floor-lamp
+      state: "on"
+    light.light_3:
+      supported_color_modes:
+        - brightness
+      mode: normal
+      dynamics: none
+      friendly_name: Bankers Lamp 1
+      supported_features: 40
+      state: "off"
+    light.light_4:
+      supported_color_modes:
+        - brightness
+      color_mode: brightness
+      brightness: 107
+      mode: normal
+      dynamics: none
+      friendly_name: Fensterbank Lampe
+      supported_features: 40
+      state: "on"

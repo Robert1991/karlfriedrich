@@ -156,6 +156,8 @@ recorder:
 
 pyscript: !include pyscript/config.yaml
 
+scene: !include scenes.yaml
+
 script zigbee2mqtt: !include zigbee2mqtt/scripts.yaml
 
 switch indoor_pool: !include indoor_pool/switches.yaml

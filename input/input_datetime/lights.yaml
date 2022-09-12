@@ -1,9 +1,24 @@
-light_dining_room_turn_off_time:
-  name: Esszimmer Licht Aus Uhrzeit
+upper_floor_light_turn_off_time:
+  name: Obergeschoss Licht Aus Uhrzeit
+  has_date: false
+  has_time: true
+
+lower_floor_light_turn_off_time:
+  name: Untergeschoss Licht Aus Uhrzeit
   has_date: false
   has_time: true
 
 garden_light_turn_off_time:
   name: Garden Light Turn Off Time
+  has_date: false
+  has_time: true
+
+garden_light_sunset_offset:
+  name: Garden Light Sunset Offset
+  has_date: false
+  has_time: true
+
+indoor_light_sunset_offset:
+  name: Indoor Light Sunset Offset
   has_date: false
   has_time: true

@@ -1,39 +1,85 @@
-- alias: Turn On Lower Floor Lights Before Sunset
+- alias: Turn On Lower Floor Lights Scene 1 At Sunset
   trigger:
-    - platform: numeric_state
-      entity_id: sun.sun
-      attribute: elevation
-      below: -2.0
+    - platform: sun
+      event: sunset
+      offset: "-00:45:00"
+  condition:
+    condition: time
+    weekday:
+      - mon
+      - wed
+      - fri
+      - sun
   action:
-    - service: light.turn_on
+    - service: scene.turn_on
       target:
-        entity_id: light.lower_floor_living_quarters_lights
+        entity_id: scene.lower_living_quarters_1
 
-- alias: Turn Off Dining Room Lights at Given Time
+- alias: Turn On Lower Floor Lights Scene 2 At Sunset
+  trigger:
+    - platform: sun
+      event: sunset
+      offset: "-00:45:00"
+  condition:
+    condition: time
+    weekday:
+      - tue
+      - thu
+      - sat
+  action:
+    - service: scene.turn_on
+      target:
+        entity_id: scene.lower_living_quarters_2
+
+- alias: Turn Off Lower Floor Lights at Given Time
   trigger:
     - platform: time
-      at: input_datetime.light_dining_room_turn_off_time
+      at: input_datetime.lower_floor_light_turn_off_time
   action:
     - service: light.turn_off
       target:
         entity_id: light.lower_floor_living_quarters_lights
 
-- alias: Turn On Garden Lights Before Sunset
+- alias: Turn On Upper Floor Lights At Sunset
   trigger:
-    - platform: numeric_state
-      entity_id: sun.sun
-      attribute: elevation
-      below: -2.0
+    - platform: sun
+      event: sunset
+      offset: "-00:45:00"
   action:
     - service: light.turn_on
       target:
-        entity_id: light.garden_lights
+        entity_id: light.upper_floor_living_quarters_lights
+
+- alias: Turn Off Upper Floor Lights at Given Time
+  trigger:
+    - platform: time
+      at: input_datetime.upper_floor_light_turn_off_time
+  action:
+    - service: light.turn_off
+      target:
+        entity_id: light.upper_floor_living_quarters_lights
+
+- alias: Turn On Garden Lights Before Sunset
+  trigger:
+    - platform: sun
+      event: sunset
+      offset: "-00:45:00"
+  action:
+    - service: pyscript.toggle_entity_with_state_ensurance
+      data:
+        entity: light.garden_lights
+        target_state: "on"
+        retry_timeout: 30
+        retry_count: 5
 
 - alias: Turn Off Garden Lights at Given Time
   trigger:
     - platform: time
       at: input_datetime.garden_light_turn_off_time
   action:
-    - service: light.turn_off
-      target:
-        entity_id: light.garden_lights
+    - service: pyscript.toggle_entity_with_state_ensurance
+      data:
+        entity: light.garden_lights
+        target_state: "off"
+        retry_timeout: 30
+        retry_count: 5
