@@ -8,3 +8,12 @@
         duckdns_domain: !secret duckdns_domain
         duckdns_token: !secret duckdns_key
 
+- alias: Send Smart Home Heart Beat
+  trigger:
+    - platform: time_pattern
+      minutes: "/1"
+  action:
+    - service: pyscript.send_heart_beat
+      data:
+        heart_beat_receiver: !secret heart_beat_receiver
+        webhook_id: !secret karlfriedrich_connected_webhook_id
