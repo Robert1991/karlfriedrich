@@ -14,6 +14,7 @@ alert: !include_dir_merge_named alerts/
 automation administration: !include automations/administration.yaml
 automation coffee_machine: !include automations/coffee_machine.yaml
 automation lights: !include automations/light_automations.yaml
+automation zigbee2mqtt: !include zigbee2mqtt/automations.yaml
 
 influxdb:
   api_version: 2
