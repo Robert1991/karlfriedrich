@@ -53,14 +53,7 @@ lovelace:
       show_in_sidebar: true
       filename: dashboards/devices.yaml
 
-mqtt:
-  broker: karlfriedrich
-  username: !secret mqtt_username
-  password: !secret mqtt_password
-
-netatmo:
-  client_id: 61702ebecc7f0e0a5a4fb983
-  client_secret: gdEeAxrRlsBtAbxwfPIYqk9b5qh9IvL1BxJWqA
+mqtt: !include mqtt.yaml
 
 notify ios:
   - name: iOS
@@ -75,10 +68,6 @@ pyscript: !include pyscript/config.yaml
 
 script zigbee2mqtt: !include zigbee2mqtt/scripts.yaml
 
-sensor zigbee2mqtt: !include zigbee2mqtt/sensors.yaml
-sensor mobile_alerts: !include mobile_alerts_sensors.yaml
-
-switch general: !include zigbee2mqtt/switches.yaml
 switch indoor_pool: !include indoor_pool/switches.yaml
 
 template: !include_dir_merge_list template/

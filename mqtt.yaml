@@ -1,0 +1,55 @@
+switch:
+  - name: "Zigbee2MQTT Main join"
+    state_topic: "zigbee2mqtt/bridge/info"
+    value_template: "{{ value_json.permit_join | lower }}"
+    command_topic: "zigbee2mqtt/bridge/request/permit_join"
+    payload_on: "true"
+    payload_off: "false"
+sensor:
+  - name: "water_temperature_pond"
+    state_topic: "MobileAlerts/066f14a80769/json"
+    unit_of_measurement: "°C"
+    value_template: "{{value_json.waterTemperature[0]}}"
+    icon: mdi:thermometer
+  - name: "temperature_glasshouse"
+    state_topic: "MobileAlerts/066f14a80769/json"
+    unit_of_measurement: "°C"
+    value_template: "{{value_json.temperature[0]}}"
+    icon: mdi:thermometer
+  - name: "humidity_glasshouse"
+    state_topic: "MobileAlerts/066f14a80769/json"
+    unit_of_measurement: "%"
+    value_template: "{{value_json.humidity[0]}}"
+    icon: mdi:water-percent
+  - name: "humidity_inner_pool"
+    state_topic: "MobileAlerts/036ee76b36bb/json"
+    unit_of_measurement: "%"
+    value_template: "{{value_json.humidity[0]}}"
+    icon: mdi:water-percent
+  - name: "temperature_inner_pool"
+    state_topic: "MobileAlerts/036ee76b36bb/json"
+    unit_of_measurement: "°C"
+    value_template: "{{value_json.temperature[0]}}"
+    icon: mdi:thermometer
+  - name: "temperature_breakfast_room"
+    state_topic: "MobileAlerts/02696076ba61/json"
+    unit_of_measurement: "°C"
+    value_template: "{{value_json.temperature[0]}}"
+    icon: mdi:thermometer
+  - name: Zigbee2MQTT Bridge state
+    state_topic: "zigbee2mqtt/bridge/state"
+    icon: mdi:router-wireless
+  - name: Zigbee2MQTT Version
+    state_topic: "zigbee2mqtt/bridge/config"
+    value_template: "{{ value_json.version }}"
+    icon: mdi:zigbee
+  - name: Coordinator Version
+    state_topic: "zigbee2mqtt/bridge/config"
+    value_template: "{{ value_json.coordinator }}"
+    icon: mdi:chip
+  - name: Zigbee2mqtt Networkmap
+    state_topic: zigbee2mqtt/bridge/networkmap
+    value_template: >-
+      {{ now().strftime('%Y-%m-%d %H:%M:%S') }}
+    json_attributes_topic: zigbee2mqtt/bridge/response/networkmap
+    json_attributes_template: "{{ value_json.data.value | tojson }}"
