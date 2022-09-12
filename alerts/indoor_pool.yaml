@@ -8,7 +8,6 @@ indoor_pool_pump_1_failure:
     - 5
     - 15
     - 30
-    - 120
   can_acknowledge: true
   skip_first: true
   notifiers:
@@ -24,7 +23,6 @@ indoor_pool_pump_2_failure:
     - 5
     - 15
     - 30
-    - 120
   can_acknowledge: true
   skip_first: true
   notifiers:
