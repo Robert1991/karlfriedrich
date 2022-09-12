@@ -6,11 +6,25 @@
     - light.esszimmer_3
     - light.esszimmer_4
     - light.wohnzimmer_buffet_lampe
-    - light.wohnzimmer_sofa_leselampe
-    - light.fruhstuckszimmer_wandlampe_1
     - light.hue_iris_bubble
     - light.hue_white_lamp_1
     - light.hue_white_lamp_1_2
+    - light.light_3
+    - light.light_4
+    - light.fruhstuckszimmer_wandlampe_1
+    - light.breakfast_room_wall_light_2
+    - light.breakfast_room_wall_light_3
+    - light.esszimmer_vertico
+- platform: group
+  name: Breakfast Room Lights
+  entities:
+    - light.fruhstuckszimmer_wandlampe_1
+    - light.breakfast_room_wall_light_2
+    - light.breakfast_room_wall_light_3
+- platform: group
+  name: Upper Floor Living Quarters Lights
+  entities:
+    - light.light_5
 
 - platform: group
   name: Garden Lights
@@ -18,3 +32,4 @@
     - light.hue_lily_outdoor_spotlight_1
     - light.hue_lily_outdoor_spotlight_2
     - light.hue_lily_outdoor_spotlight_3
+    - light.outdoor_barbecue_light

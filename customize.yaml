@@ -6,13 +6,20 @@ light.hue_iris_bubble:
 light.esszimmer_kronleuchter:
   icon: "mdi:vanity-light"
 
-switch.steckdose_kaffeemaschine:
+light.hue_smart_plug_1:
   icon: "mdi:coffee-maker"
+  friendly_name: Steckdose Kaffeemaschine
 
 light.fruhstuckszimmer_wandlampe_1:
   icon: "mdi:candle"
 
-light.wohnzimmer_sofa_leselampe:
+light.breakfast_room_wall_light_2:
+  icon: "mdi:candle"
+
+light.breakfast_room_wall_light_3:
+  icon: "mdi:candle"
+
+light.esszimmer_vertico:
   friendly_name: "Lampe auf Kommode"
   icon: "mdi:lamp"
 

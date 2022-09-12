@@ -25,6 +25,96 @@ influxdb:
   bucket: home
   organization: home
 
+homekit:
+  - filter:
+      include_domains:
+        - media_player
+        - light
+        - camera
+      include_entities:
+        - binary_sensor.movement_detected_in_front_of_garage
+        - sensor.humidity_glasshouse
+        - sensor.humidity_inner_pool
+        - sensor.netatmo_mein_zuhause_innentemperatur_humidity
+        - sensor.netatmo_mein_zuhause_innentemperatur_temperature
+        - sensor.oxygen_pump_1_power_in_watt
+        - sensor.oxygen_pump_2_power_in_watt
+        - sensor.temperature_breakfast_room
+        - sensor.temperature_glasshouse
+        - sensor.temperature_inner_pool
+        - sensor.water_temperature_pond
+        - switch.oxygen_pump_switch
+        - switch.hue_smart_plug_1
+        - light.outdoor_barbecue_light
+        - light.breakfast_room_wall_light_2
+        - light.breakfast_room_wall_light_3
+    entity_config:
+      binary_sensor.movement_detected_in_front_of_garage:
+        name: Bewegungsmelder Garage
+      light.esszimmer_1:
+        name: Esszimmer Kronleuchter Kerze 1
+      light.esszimmer_2:
+        name: Esszimmer Kronleuchter Kerze 2
+      light.esszimmer_3:
+        name: Esszimmer Kronleuchter Kerze 3
+      light.esszimmer_4:
+        name: Esszimmer Kronleuchter Kerze 4
+      light.esszimmer_kronleuchter:
+        name: Esszimmer Kronleuchter
+      light.fruhstuckszimmer_wandlampe_1:
+        name: Frühstückszimmer Wandlampe 1
+      light.breakfast_room_wall_light_2:
+        name: Frühstückszimmer Wandlampe 2
+      light.breakfast_room_wall_light_3:
+        name: Frühstückszimmer Wandlampe 3
+      light.garden_lights:
+        name: Gartenlichter
+      light.hue_iris_bubble:
+        name: Philips Hue Licht Kugel Esszimmer
+      light.hue_iris_bubble_tragbar:
+        name: Philips Hue Licht Kugel Tragbar
+      light.hue_lily_outdoor_spotlight_1:
+        name: Gartenlicht 1
+      light.hue_lily_outdoor_spotlight_2:
+        name: Gartenlicht 2
+      light.hue_lily_outdoor_spotlight_3:
+        name: Gartenlicht 3
+      light.hue_white_lamp_1:
+        name: Wohnzimmer Stehlampe 1
+      light.hue_white_lamp_1_2:
+        name: Wohnzimmer Stehlampe 2
+      light.netatmo_aussenkamera_garage:
+        name: Kameralicht Garage
+      light.esszimmer_vertico:
+        name: Esszimmer Büffet Lampe
+      light.wohnzimmer_buffet_lampe:
+        name: Wohnzimmer Büffet Lampe
+      sensor.humidity_glasshouse:
+        name: Glashaus Luftfeuchtigkeit
+      sensor.humidity_inner_pool:
+        name: Innenhälterung Luftfeuchtigkeit
+      sensor.netatmo_mein_zuhause_innentemperatur_humidity:
+        name: Schlafzimmer Luftfeuchtigkeit
+      sensor.netatmo_mein_zuhause_innentemperatur_temperature:
+        name: Schlafzimmer Temperatur
+      sensor.oxygen_pump_1_power_in_watt:
+        name: Innenhälterung Sauerstoffpumpe 1 Stromverbrauch
+      sensor.oxygen_pump_2_power_in_watt:
+        name: Innenhälterung Sauerstoffpumpe 2 Stromverbrauch
+      sensor.temperature_breakfast_room:
+        name: Temperatur Frühstückszimmer
+      sensor.temperature_glasshouse:
+        name: Temperatur Glashaus
+      sensor.temperature_inner_pool:
+        name: Temperatur Innenhälterung
+      sensor.water_temperature_pond:
+        name: Temperatur Teich
+      switch.oxygen_pump_switch:
+        name: Sauerstoffpumpe Innenhälterung
+      light.hue_smart_plug_1:
+        name: Kaffeemaschine
+      light.outdoor_barbecue_light:
+        name: Garten Lampe Grillplatz
 http:
   login_attempts_threshold: 5
 
