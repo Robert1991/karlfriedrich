@@ -12,13 +12,9 @@
       - thu
       - fri
   action:
-    - service: switch.turn_on
+    - service: light.turn_on
       target:
-        entity_id: switch.steckdose_kaffeemaschine
-    - delay: "00:00:03"
-    - service: switch.turn_on
-      target:
-        entity_id: switch.steckdose_kaffeemaschine
+        entity_id: light.hue_smart_plug_1
 
 - alias: Turn on coffee machine on weekday afternoons
   trigger:
@@ -33,13 +29,9 @@
       - wed
       - thu
   action:
-    - service: switch.turn_on
+    - service: light.turn_on
       target:
-        entity_id: switch.steckdose_kaffeemaschine
-    - delay: "00:00:03"
-    - service: switch.turn_on
-      target:
-        entity_id: switch.steckdose_kaffeemaschine
+        entity_id: light.hue_smart_plug_1
 
 - alias: Turn off coffee machine on weekdays
   trigger:
@@ -55,13 +47,9 @@
       - thu
       - fri
   action:
-    - service: switch.turn_off
+    - service: light.turn_off
       target:
-        entity_id: switch.steckdose_kaffeemaschine
-    - delay: "00:00:03"
-    - service: switch.turn_off
-      target:
-        entity_id: switch.steckdose_kaffeemaschine
+        entity_id: light.hue_smart_plug_1
 
 - alias: Turn off coffee machine on weekday afternoons
   trigger:
@@ -76,10 +64,6 @@
       - wed
       - thu
   action:
-    - service: switch.turn_off
+    - service: light.turn_off
       target:
-        entity_id: switch.steckdose_kaffeemaschine
-    - delay: "00:00:03"
-    - service: switch.turn_off
-      target:
-        entity_id: switch.steckdose_kaffeemaschine
+        entity_id: light.hue_smart_plug_1
