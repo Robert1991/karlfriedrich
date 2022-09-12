@@ -1,0 +1,59 @@
+breakfast_room_door_alarm_interval_start:
+  name: Frühstückszimmer Tür Überwachung Start Zeit
+  has_date: false
+  has_time: true
+
+breakfast_room_door_alarm_interval_end:
+  name: Frühstückszimmer Tür Überwachung End Zeit
+  has_date: false
+  has_time: true
+
+breakfast_room_door_observation_interval_warn_timeout:
+  name: Warn Interval
+  has_date: false
+  has_time: true
+
+garage_door_alarm_interval_start:
+  name: Garagen Tür Überwachung Start Zeit
+  has_date: false
+  has_time: true
+
+garage_door_alarm_interval_end:
+  name: Garagen Tür Überwachung End Zeit
+  has_date: false
+  has_time: true
+
+garage_door_observation_interval_warn_timeout:
+  name: Warn Interval
+  has_date: false
+  has_time: true
+
+front_door_alarm_interval_start:
+  name: Haustür Überwachung Start Zeit
+  has_date: false
+  has_time: true
+
+front_door_alarm_interval_end:
+  name: Haustür Tür Überwachung End Zeit
+  has_date: false
+  has_time: true
+
+front_door_observation_interval_warn_timeout:
+  name: Warn Interval
+  has_date: false
+  has_time: true
+
+patio_door_alarm_interval_start:
+  name: Veranda Tür Überwachung Start Zeit
+  has_date: false
+  has_time: true
+
+patio_door_alarm_interval_end:
+  name: Veranda Tür Überwachung End Zeit
+  has_date: false
+  has_time: true
+
+patio_door_observation_interval_warn_timeout:
+  name: Warn Interval
+  has_date: false
+  has_time: true

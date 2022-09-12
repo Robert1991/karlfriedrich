@@ -1,0 +1,144 @@
+- binary_sensor:
+    - name: Somebody At Home
+      state: "{{ states('person.mama') == 'home' or states('person.guido') == 'home' }}"
+    - name: Observed Door Is Open With Nobody At Home
+      state: "{{ (states('binary_sensor.tur_sensor_garage_contact') == 'on'
+        or states('binary_sensor.door_sensor_1_contact') == 'on'
+        or states('binary_sensor.door_sensor_2_contact') == 'on'
+        or states('binary_sensor.door_sensor_4_contact') == 'on')
+        and states('binary_sensor.somebody_at_home') == 'off' }}"
+    - name: Door Was Forgotten To Be Closed
+      state:
+        "{{ states('binary_sensor.observed_door_is_open_with_nobody_home') == 'on'
+        or states('binary_sensor.breakfast_room_door_was_left_open_in_observation_interval') == 'on'
+        or states('binary_sensor.front_door_was_left_open_in_observation_interval') == 'on'
+        or states('binary_sensor.garage_door_was_left_open_in_observation_interval') == 'on'
+        or states('binary_sensor.patio_door_was_left_open_in_observation_interval') == 'on'  }}"
+
+- trigger:
+    - platform: state
+      entity_id: binary_sensor.door_sensor_1_contact
+      to: "on"
+      for: "{{ states('input_datetime.front_door_observation_interval_warn_timeout') }}"
+    - platform: state
+      entity_id: binary_sensor.door_sensor_1_contact
+      to: "off"
+  binary_sensor:
+    - name: "Front Door Was Left Open In Observation Interval"
+      state: >
+        {% if states("input_boolean.front_door_alarm_alarm_active") == "on" 
+          and states("binary_sensor.door_sensor_1_contact") == "on" %}
+          {% if strptime(states("input_datetime.front_door_alarm_interval_start"),"%H:%M:%S") < strptime(states("input_datetime.front_door_alarm_interval_end"),"%H:%M:%S") %}
+            {% if now().strftime('%H:%M:%S') > states("input_datetime.front_door_alarm_interval_start")
+              and now().strftime('%H:%M:%S') < states("input_datetime.front_door_alarm_interval_end") %}
+                on
+            {% else %}
+                off
+            {% endif %}
+          {% else %}
+              {% if now().strftime('%H:%M:%S') > states("input_datetime.front_door_alarm_interval_start") or
+                now().strftime('%H:%M:%S') < states("input_datetime.front_door_alarm_interval_end") %}
+                  on
+              {% else %}
+                off
+              {% endif %}
+          {% endif %}
+        {% else %}
+          off
+        {% endif %}
+
+- trigger:
+    - platform: state
+      entity_id: binary_sensor.door_sensor_4_contact
+      to: "on"
+      for: "{{ states('input_datetime.breakfast_room_door_observation_interval_warn_timeout') }}"
+    - platform: state
+      entity_id: binary_sensor.door_sensor_4_contact
+      to: "off"
+  binary_sensor:
+    - name: "Breakfast Room Door Was Left Open In Observation Interval"
+      state: >
+        {% if states("input_boolean.breakfast_room_door_alarm_alarm_active") == "on" 
+          and states("binary_sensor.door_sensor_4_contact") == "on" %}
+          {% if strptime(states("input_datetime.breakfast_room_door_alarm_interval_start"),"%H:%M:%S") < strptime(states("input_datetime.breakfast_room_door_alarm_interval_end"),"%H:%M:%S") %}
+            {% if now().strftime('%H:%M:%S') > states("input_datetime.breakfast_room_door_alarm_interval_start")
+              and now().strftime('%H:%M:%S') < states("input_datetime.breakfast_room_door_alarm_interval_end") %}
+                on
+            {% else %}
+                off
+            {% endif %}
+          {% else %}
+              {% if now().strftime('%H:%M:%S') > states("input_datetime.breakfast_room_door_alarm_interval_start") or
+                now().strftime('%H:%M:%S') < states("input_datetime.breakfast_room_door_alarm_interval_end") %}
+                  on
+              {% else %}
+                off
+              {% endif %}
+          {% endif %}
+        {% else %}
+          off
+        {% endif %}
+
+- trigger:
+    - platform: state
+      entity_id: binary_sensor.door_sensor_3_contact
+      to: "on"
+      for: "{{ states('input_datetime.patio_door_observation_interval_warn_timeout') }}"
+    - platform: state
+      entity_id: binary_sensor.door_sensor_3_contact
+      to: "off"
+  binary_sensor:
+    - name: "Patio Door Was Left Open In Observation Interval"
+      state: >
+        {% if states("input_boolean.patio_door_alarm_alarm_active") == "on" 
+          and states("binary_sensor.door_sensor_3_contact") == "on" %}
+          {% if strptime(states("input_datetime.patio_door_alarm_interval_start"),"%H:%M:%S") < strptime(states("input_datetime.patio_door_alarm_interval_end"),"%H:%M:%S") %}
+            {% if now().strftime('%H:%M:%S') > states("input_datetime.patio_door_alarm_interval_start")
+              and now().strftime('%H:%M:%S') < states("input_datetime.patio_door_alarm_interval_end") %}
+                on
+            {% else %}
+                off
+            {% endif %}
+          {% else %}
+              {% if now().strftime('%H:%M:%S') > states("input_datetime.patio_door_alarm_interval_start") or
+                now().strftime('%H:%M:%S') < states("input_datetime.patio_door_alarm_interval_end") %}
+                  on
+              {% else %}
+                off
+              {% endif %}
+          {% endif %}
+        {% else %}
+          off
+        {% endif %}
+
+- trigger:
+    - platform: state
+      entity_id: binary_sensor.tur_sensor_garage_contact
+      to: "on"
+      for: "{{ states('input_datetime.garage_door_observation_interval_warn_timeout') }}"
+    - platform: state
+      entity_id: binary_sensor.tur_sensor_garage_contact
+      to: "off"
+  binary_sensor:
+    - name: "Garage Door Was Left Open In Observation Interval"
+      state: >
+        {% if states("input_boolean.garage_door_alarm_alarm_active") == "on" 
+          and states("binary_sensor.door_sensor_3_contact") == "on" %}
+          {% if strptime(states("input_datetime.garage_door_alarm_interval_start"),"%H:%M:%S") < strptime(states("input_datetime.garage_door_alarm_interval_end"),"%H:%M:%S") %}
+            {% if now().strftime('%H:%M:%S') > states("input_datetime.garage_door_alarm_interval_start")
+              and now().strftime('%H:%M:%S') < states("input_datetime.garage_door_alarm_interval_end") %}
+                on
+            {% else %}
+                off
+            {% endif %}
+          {% else %}
+              {% if now().strftime('%H:%M:%S') > states("input_datetime.garage_door_alarm_interval_start") or
+                now().strftime('%H:%M:%S') < states("input_datetime.garage_door_alarm_interval_end") %}
+                  on
+              {% else %}
+                off
+              {% endif %}
+          {% endif %}
+        {% else %}
+          off
+        {% endif %}

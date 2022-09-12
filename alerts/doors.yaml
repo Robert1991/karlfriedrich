@@ -1,0 +1,22 @@
+door_was_forgotten_to_be_closed_when_leaving_house:
+  name: Tür wurde offen gelassen!
+  done_message: Alle Türen geschlossen
+  entity_id: binary_sensor.door_was_forgotten_to_be_closed
+  state: "on"
+  repeat:
+    - 2
+    - 5
+    - 5
+    - 10
+    - 15
+    - 30
+  can_acknowledge: true
+  skip_first: false
+  message: >
+    {% if is_state("binary_sensor.door_sensor_1_contact", "on") -%}
+    - Haustür{%- endif %}{% if is_state("binary_sensor.door_sensor_3_contact", "on") -%}
+    - Veranda Tür{%- endif %}{% if is_state("binary_sensor.door_sensor_4_contact", "on") -%}
+    - Frühstückszimmer Tür{%- endif %}{% if is_state("binary_sensor.tur_sensor_garage_contact", "on") -%}
+    - Garagen Tür{%- endif %}
+  notifiers:
+    - ios
