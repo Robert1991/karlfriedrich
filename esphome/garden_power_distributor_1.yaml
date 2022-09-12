@@ -1,0 +1,93 @@
+esphome:
+  includes:
+    - custom/PowerSensor.h
+
+substitutions:
+  node_name: garden_power_distributor
+  node_board: nodemcuv2
+  node_verbose_name: Garden Power Distributor
+
+globals:
+  - id: current_min_val
+    type: float
+    restore_value: no
+    initial_value: "6.144"
+  - id: current_max_val
+    type: float
+    restore_value: no
+    initial_value: "1024.0"
+  - id: current_millis
+    type: float
+    restore_value: no
+    initial_value: "0.0"
+
+logger:
+  level: INFO
+
+packages:
+  mqtt: !include mqtt.yaml
+  wifi: !include wifi.yaml
+  device_base: !include common/device_base.yaml
+  #custom_sensor: !include custom/PowerSensor.yaml
+
+i2c:
+  - id: i2cbus
+    sda: 4
+    scl: 5
+
+ads1115:
+  - address: 0x48
+
+switch:
+  - platform: gpio
+    name: ${node_verbose_name} Power Switch 1
+    inverted: true
+    pin:
+      number: D3
+  - platform: gpio
+    name: ${node_verbose_name} Power Switch 2
+    inverted: true
+    pin:
+      number: D4
+  - platform: gpio
+    inverted: true
+    name: ${node_verbose_name} Power Switch 3
+    pin:
+      number: D5
+
+sensor:
+  - platform: custom
+    lambda: |-
+      auto powerSensor = new PowerSensor("internal_power_sensor_1", 0.011489);
+      App.register_component(powerSensor);
+      return {powerSensor};
+
+    sensors:
+      name: "${node_verbose_name} Power Sensor 1"
+      unit_of_measurement: W
+  - platform: custom
+    lambda: |-
+      auto powerSensor = new PowerSensor("internal_power_sensor_2", 0.011400);
+      App.register_component(powerSensor);
+      return {powerSensor};
+
+    sensors:
+      name: "${node_verbose_name} Power Sensor 2"
+      unit_of_measurement: W
+
+  - platform: ads1115
+    multiplexer: "A0_GND"
+    gain: 6.144
+    id: power_sensor_1
+    name: internal_power_sensor_1
+    update_interval: 20s
+    unit_of_measurement: "V"
+    internal: true
+  - platform: ads1115
+    multiplexer: "A1_GND"
+    gain: 6.144
+    id: power_sensor_2
+    name: internal_power_sensor_2
+    update_interval: 20s
+    unit_of_measurement: "V"
+    internal: true

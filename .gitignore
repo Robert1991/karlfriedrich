@@ -15,6 +15,10 @@ passwd.dat
 .ssh/
 .cloud/
 
+# esphome
+esphome/.esphome
+esphome/build
+
 # zigbee2mqtt
 zigbee2mqtt/log/
 zigbee2mqtt/database.db

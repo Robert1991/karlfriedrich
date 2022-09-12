@@ -1,0 +1,8 @@
+wifi:
+  ssid: !secret WIFI_SSID
+  password: !secret WIFI_PASS
+  domain: .lan
+
+  ap:
+    ssid: ${node_verbose_name}
+    password: "7OVsabPI1Qb9"
