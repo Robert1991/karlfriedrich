@@ -1,9 +1,0 @@
-- sensor:
-    - name: Oxygen Pump 1 Power In Watt
-      state: "{{ states('sensor.oxygen_pump_switch_1_power') | float / 10 | float }}"
-      unit_of_measurement: Watt
-      icon: mdi:lightning-bolt-outline
-    - name: Oxygen Pump 2 Power In Watt
-      state: "{{ states('sensor.oxygen_pump_switch_2_power') | float / 10 | float }}"
-      unit_of_measurement: Watt
-      icon: mdi:lightning-bolt-outline

@@ -38,8 +38,8 @@ homekit:
         - sensor.humidity_inner_pool
         - sensor.netatmo_mein_zuhause_innentemperatur_humidity
         - sensor.netatmo_mein_zuhause_innentemperatur_temperature
-        - sensor.oxygen_pump_1_power_in_watt
-        - sensor.oxygen_pump_2_power_in_watt
+        - sensor.oxygen_pump_switch_1_power
+        - sensor.oxygen_pump_switch_2_power
         - sensor.temperature_breakfast_room
         - sensor.temperature_glasshouse
         - sensor.temperature_inner_pool
@@ -98,9 +98,9 @@ homekit:
         name: Schlafzimmer Luftfeuchtigkeit
       sensor.netatmo_mein_zuhause_innentemperatur_temperature:
         name: Schlafzimmer Temperatur
-      sensor.oxygen_pump_1_power_in_watt:
+      sensor.oxygen_pump_switch_1_power:
         name: Innenhälterung Sauerstoffpumpe 1 Stromverbrauch
-      sensor.oxygen_pump_2_power_in_watt:
+      sensor.oxygen_pump_switch_2_power:
         name: Innenhälterung Sauerstoffpumpe 2 Stromverbrauch
       sensor.temperature_breakfast_room:
         name: Temperatur Frühstückszimmer

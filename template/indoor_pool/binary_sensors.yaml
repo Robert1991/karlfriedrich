@@ -1,5 +1,5 @@
 - binary_sensor:
     - name: Oxygen Pump 1 Power Low
-      state: "{{ states('timer.reactivated_oxygen_pump_timer') == 'idle' and states('sensor.oxygen_pump_switch_1_power') | float < 300 }}"
+      state: "{{ states('timer.reactivated_oxygen_pump_timer') == 'idle' and states('sensor.oxygen_pump_switch_1_power') | float < 30 }}"
     - name: Oxygen Pump 2 Power Low
-      state: "{{ states('timer.reactivated_oxygen_pump_timer') == 'idle' and states('sensor.oxygen_pump_switch_2_power') | float < 300 }}"
+      state: "{{ states('timer.reactivated_oxygen_pump_timer') == 'idle' and states('sensor.oxygen_pump_switch_2_power') | float < 30 }}"
