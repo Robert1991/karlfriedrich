@@ -9,6 +9,7 @@ home-assistant_v2.*
 .vscode/*
 *.pyc
 appdaemon/
+pyscript/
 blueprints/**/homeassistant/
 passwd.dat
 .shopping_list.json

@@ -1,0 +1,59 @@
+allow_all_imports: true
+hass_is_global: true
+apps:
+  netatmo_event_logger:
+    event_log: /config/tmp/netatmo_event.log
+    cameras:
+      - name: outside_camera_garage
+        id: 70:ee:50:3d:4e:de
+      - name: inside_camera_dining_room
+        id: 70:ee:50:53:a0:e7
+    max_snapshots: 100
+  timer_switch_controller:
+    - button_sensor: sensor.hue_smart_button_1_action
+      switch_entity: switch.oxygen_pump_switch
+      timer_entity: timer.reactivated_oxygen_pump_timer
+      timeout_entity: input_number.reactivate_oxygen_pump_timeout
+  entity_unavailable_notification_service:
+    - entity: light.fruhstuckszimmer_wandlampe_1
+      notify_every: 60
+      message: Frühstückszimmer Wandlampe vom Strom getrennt
+    - entity: light.esszimmer_1
+      message: Esszimmer Kronleuchter vom Strom getrennt
+      notify_every: 60
+    - entity: light.esszimmer_2
+      message: Esszimmer Kronleuchter vom Strom getrennt
+      notify_every: 60
+    - entity: light.esszimmer_3
+      message: Esszimmer Kronleuchter vom Strom getrennt
+      notify_every: 60
+    - entity: light.esszimmer_4
+      message: Esszimmer Kronleuchter vom Strom getrennt
+      notify_every: 60
+    - entity: light.hue_iris_bubble
+      message: Philips Hue Licht Kugel Esszimmer vom Strom getrennt
+      notify_every: 60sudo dmesg
+    - entity: light.hue_iris_bubble_tragbar
+      message: Philips Hue Licht Kugel Tragbar Batterie leer
+      notify_every: 60
+    - entity: light.hue_lily_outdoor_spotlight_1
+      message: Gartenlicht 1 vom Strom getrennt
+      notify_every: 60
+    - entity: light.hue_lily_outdoor_spotlight_2
+      message: Gartenlicht 2 vom Strom getrennt
+      notify_every: 60
+    - entity: light.hue_lily_outdoor_spotlight_3
+      message: Gartenlicht 3 vom Strom getrennt
+      notify_every: 60
+    - entity: light.hue_white_lamp_1
+      message: Wohnzimmer Stehlampe 1 vom Strom getrennt
+      notify_every: 60
+    - entity: light.hue_white_lamp_1_2
+      message: Wohnzimmer Stehlampe 2 vom Strom getrennt
+      notify_every: 60
+    - entity: light.esszimmer_vertico
+      message: Esszimmer Vertico Lampe vom Strom getrennt
+      notify_every: 60
+    - entity: light.wohnzimmer_buffet_lampe
+      message: Wohnzimmer Büffet vom Strom getrennt
+      notify_every: 60

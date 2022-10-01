@@ -155,7 +155,7 @@ notify ios:
 recorder:
   db_url: !secret maria_db_url
 
-pyscript: !include pyscript/config.yaml
+pyscript: !include pyscript_config.yaml
 
 scene: !include scenes.yaml
 
