@@ -1,0 +1,24 @@
+garden_light_automation_sunset_offset:
+  name: "Garden Light Automation Sunset Offset in Minutes"
+  min: -100
+  max: 100
+  step: 1
+  mode: box
+  unit_of_measurement: "min"
+  icon: "mdi:clock-in"
+lower_floor_light_automation_sunset_offset:
+  name: "Lower Floor Light Automation Sunset Offset in Minutes"
+  min: -100
+  max: 100
+  step: 1
+  mode: box
+  unit_of_measurement: "min"
+  icon: "mdi:clock-in"
+upper_floor_light_automation_sunset_offset:
+  name: "Upper Floor Light Automation Sunset Offset in Minutes"
+  min: -100
+  max: 100
+  step: 1
+  mode: box
+  unit_of_measurement: "min"
+  icon: "mdi:clock-in"

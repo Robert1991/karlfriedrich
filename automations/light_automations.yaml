@@ -1,8 +1,7 @@
 - alias: Turn On Lower Floor Lights Scene 1 At Sunset
   trigger:
-    - platform: sun
-      event: sunset
-      offset: "-00:45:00"
+    - platform: time
+      at: sensor.lower_floor_lights_turn_on_time
   condition:
     condition: time
     weekday:
@@ -17,9 +16,8 @@
 
 - alias: Turn On Lower Floor Lights Scene 2 At Sunset
   trigger:
-    - platform: sun
-      event: sunset
-      offset: "-00:45:00"
+    - platform: time
+      at: sensor.lower_floor_lights_turn_on_time
   condition:
     condition: time
     weekday:
@@ -42,9 +40,8 @@
 
 - alias: Turn On Upper Floor Lights At Sunset
   trigger:
-    - platform: sun
-      event: sunset
-      offset: "-00:45:00"
+    - platform: time
+      at: sensor.upper_floor_lights_turn_on_time
   action:
     - service: light.turn_on
       target:
@@ -61,9 +58,8 @@
 
 - alias: Turn On Garden Lights Before Sunset
   trigger:
-    - platform: sun
-      event: sunset
-      offset: "-00:45:00"
+    - platform: time
+      at: sensor.garden_lights_turn_on_time
   action:
     - service: pyscript.toggle_entity_with_state_ensurance
       data:
