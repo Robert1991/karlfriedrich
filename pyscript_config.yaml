@@ -17,43 +17,52 @@ apps:
   entity_unavailable_notification_service:
     - entity: light.fruhstuckszimmer_wandlampe_1
       notify_every: 60
-      message: Frühstückszimmer Wandlampe vom Strom getrennt
+      message: Frühstückszimmer Wandlampe nicht erreichbar
     - entity: light.esszimmer_1
-      message: Esszimmer Kronleuchter vom Strom getrennt
+      message: Esszimmer Kronleuchter nicht erreichbar
       notify_every: 60
     - entity: light.esszimmer_2
-      message: Esszimmer Kronleuchter vom Strom getrennt
+      message: Esszimmer Kronleuchter nicht erreichbar
       notify_every: 60
     - entity: light.esszimmer_3
-      message: Esszimmer Kronleuchter vom Strom getrennt
+      message: Esszimmer Kronleuchter nicht erreichbar
       notify_every: 60
     - entity: light.esszimmer_4
-      message: Esszimmer Kronleuchter vom Strom getrennt
+      message: Esszimmer Kronleuchter nicht erreichbar
       notify_every: 60
     - entity: light.hue_iris_bubble
-      message: Philips Hue Licht Kugel Esszimmer vom Strom getrennt
-      notify_every: 60sudo dmesg
+      message: Philips Hue Licht Kugel Esszimmer nicht erreichbar
+      notify_every: 60
     - entity: light.hue_iris_bubble_tragbar
       message: Philips Hue Licht Kugel Tragbar Batterie leer
       notify_every: 60
     - entity: light.hue_lily_outdoor_spotlight_1
-      message: Gartenlicht 1 vom Strom getrennt
+      message: Gartenlicht 1 nicht erreichbar
       notify_every: 60
     - entity: light.hue_lily_outdoor_spotlight_2
-      message: Gartenlicht 2 vom Strom getrennt
+      message: Gartenlicht 2 nicht erreichbar
       notify_every: 60
     - entity: light.hue_lily_outdoor_spotlight_3
-      message: Gartenlicht 3 vom Strom getrennt
+      message: Gartenlicht 3 nicht erreichbar
+      notify_every: 60
+    - entity: light.hue_lily_outdoor_spotlight_4
+      message: Gartenlicht 4 nicht erreichbar
+      notify_every: 60
+    - entity: light.hue_lily_outdoor_spotlight_5
+      message: Gartenlicht 5 nicht erreichbar
+      notify_every: 60
+    - entity: light.hue_lily_outdoor_spotlight_6
+      message: Gartenlicht 6 nicht erreichbar
       notify_every: 60
     - entity: light.hue_white_lamp_1
-      message: Wohnzimmer Stehlampe 1 vom Strom getrennt
+      message: Wohnzimmer Stehlampe 1 nicht erreichbar
       notify_every: 60
     - entity: light.hue_white_lamp_1_2
-      message: Wohnzimmer Stehlampe 2 vom Strom getrennt
+      message: Wohnzimmer Stehlampe 2 nicht erreichbar
       notify_every: 60
     - entity: light.esszimmer_vertico
-      message: Esszimmer Vertico Lampe vom Strom getrennt
+      message: Esszimmer Vertico Lampe nicht erreichbar
       notify_every: 60
     - entity: light.wohnzimmer_buffet_lampe
-      message: Wohnzimmer Büffet vom Strom getrennt
+      message: Wohnzimmer Büffet nicht erreichbar
       notify_every: 60

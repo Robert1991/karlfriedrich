@@ -47,5 +47,17 @@ light.hue_lily_outdoor_spotlight_3:
   friendly_name: Garten Spot 3
   icon: mdi:track-light
 
+light.hue_lily_outdoor_spotlight_4:
+  friendly_name: Garten Spot 4
+  icon: mdi:track-light
+
+light.hue_lily_outdoor_spotlight_5:
+  friendly_name: Garten Spot 5
+  icon: mdi:track-light
+
+light.hue_lily_outdoor_spotlight_6:
+  friendly_name: Garten Spot 6
+  icon: mdi:track-light
+
 light.netatmo_aussenkamera_garage:
   icon: mdi:cctv

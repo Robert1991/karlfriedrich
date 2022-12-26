@@ -80,6 +80,12 @@ homekit:
         name: Gartenlicht 2
       light.hue_lily_outdoor_spotlight_3:
         name: Gartenlicht 3
+      light.hue_lily_outdoor_spotlight_4:
+        name: Gartenlicht 4
+      light.hue_lily_outdoor_spotlight_5:
+        name: Gartenlicht 5
+      light.hue_lily_outdoor_spotlight_6:
+        name: Gartenlicht 6
       light.hue_white_lamp_1:
         name: Wohnzimmer Stehlampe 1
       light.hue_white_lamp_1_2:
