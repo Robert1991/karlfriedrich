@@ -1,10 +1,19 @@
+- trigger:
+    - platform: time_pattern
+      hours: 0
+      minutes: 30
+  sensor:
+    - name: next_sun_setting
+      state: "{{ state_attr('sun.sun', 'next_setting') }}"
+      unit_of_measurement: timestamp
+
 - sensor:
     - name: Garden Lights Turn On Time
-      state: "{{ as_timestamp(as_datetime(state_attr('sun.sun', 'next_setting')) + timedelta(minutes=int(states('input_number.garden_light_automation_sunset_offset')))) | timestamp_local  }}"
+      state: "{{ as_timestamp(as_datetime(states('sensor.next_sun_setting')) + timedelta(minutes=int(states('input_number.garden_light_automation_sunset_offset')))) | timestamp_local  }}"
       device_class: timestamp
     - name: Lower Floor Lights Turn On Time
-      state: "{{ as_timestamp(as_datetime(state_attr('sun.sun', 'next_setting')) + timedelta(minutes=int(states('input_number.lower_floor_light_automation_sunset_offset')))) | timestamp_local  }}"
+      state: "{{ as_timestamp(as_datetime(states('sensor.next_sun_setting')) + timedelta(minutes=int(states('input_number.lower_floor_light_automation_sunset_offset')))) | timestamp_local  }}"
       device_class: timestamp
     - name: Upper Floor Lights Turn On Time
-      state: "{{ as_timestamp(as_datetime(state_attr('sun.sun', 'next_setting')) + timedelta(minutes=int(states('input_number.upper_floor_light_automation_sunset_offset')))) | timestamp_local  }}"
+      state: "{{ as_timestamp(as_datetime(states('sensor.next_sun_setting')) + timedelta(minutes=int(states('input_number.upper_floor_light_automation_sunset_offset')))) | timestamp_local  }}"
       device_class: timestamp
