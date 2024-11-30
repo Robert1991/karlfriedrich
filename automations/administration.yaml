@@ -1,12 +1,19 @@
 - alias: Update DuckDNS
   trigger:
+    - platform: homeassistant
+      event: start
     - platform: state
       entity_id: sensor.fritz_box_7590_external_ip
   action:
     - service: pyscript.update_duckdns_ipaddress
       data:
         duckdns_domain: !secret duckdns_domain
+        external_ip_provider: sensor.fritz_box_7590_external_ip
         duckdns_token: !secret duckdns_key
+    - service: persistent_notification.create
+      data:
+        title: Updated Duckdns IP
+        message: "Duckdns IP successfuly updated to {{ states('sensor.myip')}}"
 
 - alias: Send Smart Home Heart Beat
   trigger:
