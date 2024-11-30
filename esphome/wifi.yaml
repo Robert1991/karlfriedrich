@@ -1,7 +1,7 @@
 wifi:
   ssid: !secret WIFI_SSID
   password: !secret WIFI_PASS
-  domain: .lan
+  domain: .fritz.box
 
   ap:
     ssid: ${node_verbose_name}

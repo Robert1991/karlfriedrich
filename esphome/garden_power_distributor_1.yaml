@@ -3,7 +3,7 @@ esphome:
     - custom/PowerSensor.h
 
 substitutions:
-  node_name: garden_power_distributor
+  node_name: garden-power-distributor
   node_board: nodemcuv2
   node_verbose_name: Garden Power Distributor
 
@@ -28,7 +28,7 @@ packages:
   mqtt: !include mqtt.yaml
   wifi: !include wifi.yaml
   device_base: !include common/device_base.yaml
-  #custom_sensor: !include custom/PowerSensor.yaml
+  #custom_sensor: !include custom/PowerSensor.h
 
 i2c:
   - id: i2cbus
