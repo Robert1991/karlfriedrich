@@ -1,0 +1,5 @@
+- binary_sensor:
+    - name: Pond Pump Power Low
+      state: "{{ states('timer.pond_pumps_reactivation_timer') == 'idle' and states('sensor.pond_pump_switch_power') | float < (states('input_number.pond_pump_power_alarm_threshold') | float) }}"
+    - name: Pond Waterfall Pump Power Low
+      state: "{{ states('timer.pond_pumps_reactivation_timer') == 'idle' and states('sensor.waterfall_pump_switch_power') | float < (states('input_number.pond_waterfall_power_alarm_threshold') | float) }}"

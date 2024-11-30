@@ -1,8 +1,0 @@
-reactivate_oxygen_pump_timeout:
-  name: "Reactivate oxygen pump timeout"
-  min: 1
-  max: 100
-  step: 1
-  mode: slider
-  unit_of_measurement: "min"
-  icon: "mdi:clock-in"

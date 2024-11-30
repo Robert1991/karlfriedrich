@@ -1,0 +1,31 @@
+pond_pump_failure:
+  name: Energie-Abfall Teichpumpe
+  done_message: Energie Teichpumpe normal
+  entity_id: binary_sensor.pond_pump_power_low
+  state: "on"
+  repeat:
+    - 5
+    - 5
+    - 15
+    - 30
+  can_acknowledge: true
+  skip_first: true
+  notifiers:
+    - ios
+    - persistent_notification
+
+waterfall_pump_failure:
+  name: Energie-Abfall Pumpe Wasserfall
+  done_message: Energie Pumpe Wasserfall normal
+  entity_id: binary_sensor.pond_waterfall_pump_power_low
+  state: "on"
+  repeat:
+    - 5
+    - 5
+    - 15
+    - 30
+  can_acknowledge: true
+  skip_first: true
+  notifiers:
+    - ios
+    - persistent_notification

@@ -30,3 +30,15 @@ devices:
     friendly_name: Door Sensor 2
   "0x0017880109e65105":
     friendly_name: Hue Iris Bubble Tragbar
+  '0xa4c138eae614c886':
+    friendly_name: Oxygen Pump Switch 1
+  '0xa4c138467afe60e6':
+    friendly_name: Oxygen Pump Switch 2
+  '0xa4c138479fec39d1':
+    friendly_name: Pond Pump Switch
+  '0x8c65a3fffe526dbc':
+    friendly_name: Zigbee Range Extender
+  '0xa4c1386c46704894':
+    friendly_name: Waterfall Pump Switch
+  '0x8c65a3fffe5264d5':
+    friendly_name: Zigbee Range Extender 2

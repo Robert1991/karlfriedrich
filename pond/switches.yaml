@@ -1,0 +1,18 @@
+- platform: template
+  switches:
+    pond_pumps_switch:
+      icon_template: "{{ 'mdi:pump' }}"
+      turn_on:
+        - service: switch.turn_on
+          target:
+            entity_id: switch.pond_pump_switch
+        - service: switch.turn_on
+          target:
+            entity_id: switch.waterfall_pump_switch
+      turn_off:
+        - service: switch.turn_off
+          target:
+            entity_id: switch.pond_pump_switch
+        - service: switch.turn_off
+          target:
+            entity_id: switch.waterfall_pump_switch

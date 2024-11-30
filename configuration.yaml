@@ -169,6 +169,7 @@ scene: !include scenes.yaml
 
 script zigbee2mqtt: !include zigbee2mqtt/scripts.yaml
 
+switch pond: !include pond/switches.yaml
 switch indoor_pool: !include indoor_pool/switches.yaml
 
 template: !include_dir_merge_list template/
@@ -183,6 +184,10 @@ timer:
   zigbee_permit_join:
     name: Time remaining
     duration: 120
+  indoor_pool_oxygen_pump_reactivation_timer:
+    duration: "00:00:00"
+  pond_pumps_reactivation_timer:
+    duration: "00:00:00"
   entrance_door_open_alert_timer:
     duration: "00:00:00"
   back_entrance_door_open_alert_timer:

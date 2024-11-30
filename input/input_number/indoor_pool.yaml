@@ -1,0 +1,26 @@
+indoor_pool_oxygen_pump_1_power_alarm_threshold:
+  name: "Oxygen Pump 1 Power Alarm Threshold"
+  min: 0
+  max: 50
+  step: 1
+  mode: slider
+  unit_of_measurement: "W"
+  icon: "mdi:lightning-bolt-outline"
+
+indoor_pool_oxygen_pump_2_power_alarm_threshold:
+  name: "Oxygen Pump 2 Power Alarm Threshold"
+  min: 0
+  max: 50
+  step: 1
+  mode: slider
+  unit_of_measurement: "W"
+  icon: "mdi:lightning-bolt-outline"
+
+reactivate_oxygen_pump_timeout:
+  name: "Reactivate oxygen pump timeout"
+  min: 1
+  max: 50
+  step: 1
+  mode: slider
+  unit_of_measurement: "min"
+  icon: "mdi:clock-in"
