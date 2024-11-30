@@ -1,3 +1,51 @@
+entrance_door_was_left_open:
+  name: Haustür wurde offen gelassen!
+  done_message: Haustür geschlossen
+  entity_id: binary_sensor.entrance_door_was_left_open
+  repeat: 2
+  can_acknowledge: true
+  skip_first: false
+  message: Haustür ist offen
+  notifiers:
+    - ios
+    - persistent_notification
+
+back_entrance_door_was_left_open:
+  name: Frühstückszimmertür wurde offen gelassen!
+  done_message: Frühstückszimmertür geschlossen
+  entity_id: binary_sensor.back_entrance_door_was_left_open
+  repeat: 2
+  can_acknowledge: true
+  skip_first: false
+  message: Frühstückszimmertür ist offen
+  notifiers:
+    - ios
+    - persistent_notification
+
+patio_door_was_left_open:
+  name: Verandatür wurde offen gelassen!
+  done_message: Verandatür geschlossen
+  entity_id: binary_sensor.patio_door_was_left_open
+  repeat: 2
+  can_acknowledge: true
+  skip_first: false
+  message: Verandatür ist offen
+  notifiers:
+    - ios
+    - persistent_notification
+
+garage_door_was_left_open:
+  name: Garagentür wurde offen gelassen!
+  done_message: Garagentür geschlossen
+  entity_id: binary_sensor.garage_door_was_left_open
+  repeat: 2
+  can_acknowledge: true
+  skip_first: false
+  message: Garagentür ist offen
+  notifiers:
+    - ios
+    - persistent_notification
+
 door_was_forgotten_to_be_closed_when_leaving_house:
   name: Tür wurde offen gelassen!
   done_message: Alle Türen geschlossen
@@ -13,10 +61,10 @@ door_was_forgotten_to_be_closed_when_leaving_house:
   can_acknowledge: true
   skip_first: false
   message: >
-    {% if is_state("binary_sensor.door_sensor_1_contact", "on") -%}
-    - Haustür{%- endif %}{% if is_state("binary_sensor.door_sensor_3_contact", "on") -%}
-    - Veranda Tür{%- endif %}{% if is_state("binary_sensor.door_sensor_4_contact", "on") -%}
-    - Frühstückszimmer Tür{%- endif %}{% if is_state("binary_sensor.tur_sensor_garage_contact", "on") -%}
+    {% if is_state("binary_sensor.door_sensor_3_contact", "on") -%}
+    - Haustür{%- endif %}{% if is_state("binary_sensor.entrance_door", "on") -%}
+    - Veranda Tür{%- endif %}{% if is_state("binary_sensor.garage_door", "on") -%}
+    - Frühstückszimmer Tür{%- endif %}{% if is_state("binary_sensor.back_entrance_door", "on") -%}
     - Garagen Tür{%- endif %}
   notifiers:
     - ios

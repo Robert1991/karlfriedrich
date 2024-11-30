@@ -1,0 +1,244 @@
+# Entrance Door
+- alias: Execute timer when entrance door was left open
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.entrance_door
+      to: 'on'
+  condition:
+    - condition: state
+      entity_id: input_boolean.entrance_door_alarm_active
+      state: 'on'
+  action:
+    - service: timer.start
+      target:
+        entity_id: timer.entrance_door_open_alert_timer
+      data:
+        duration: "{{ (states('input_number.entrance_door_open_alert_timeout') | int) * 60 }}"
+
+- alias: Cancel timer when entrance door gets closed
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.entrance_door
+      to: 'off'
+  condition:
+    - condition: state
+      entity_id: timer.entrance_door_open_alert_timer
+      state: active
+  action:
+    - service: timer.cancel
+      target:
+        entity_id: timer.entrance_door_open_alert_timer
+
+- alias: Execute timer when entrance door observation was reactivated and door is open
+  trigger:
+    - platform: state
+      entity_id: input_boolean.entrance_door_alarm_active
+      to: 'on'
+  condition:
+    - condition: state
+      entity_id: binary_sensor.entrance_door
+      state: 'on'
+  action:
+    - service: timer.start
+      target:
+        entity_id: timer.entrance_door_open_alert_timer
+      data:
+        duration: "{{ (states('input_number.entrance_door_open_alert_timeout') | int) * 60 }}"
+
+- alias: Stop entrance door alert timer when observation was disabled
+  trigger:
+    - platform: state
+      entity_id: input_boolean.entrance_door_alarm_active
+      to: 'off'
+  condition:
+    - condition: state
+      entity_id: timer.entrance_door_open_alert_timer
+      state: active
+  action:
+    - service: timer.cancel
+      target:
+        entity_id: timer.entrance_door_open_alert_timer
+
+# Back entrance door
+- alias: Execute timer when back entrance door was left open
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.back_entrance_door
+      to: 'on'
+  condition:
+    - condition: state
+      entity_id: input_boolean.back_entrance_door_alarm_active
+      state: 'on'
+  action:
+    - service: timer.start
+      target:
+        entity_id: timer.back_entrance_door_open_alert_timer
+      data:
+        duration: "{{ (states('input_number.back_entrance_door_open_alert_timeout') | int) * 60 }}"
+
+- alias: Cancel timer when back entrance door gets closed
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.back_entrance_door
+      to: 'off'
+  condition:
+    - condition: state
+      entity_id: timer.back_entrance_door_open_alert_timer
+      state: active
+  action:
+    - service: timer.cancel
+      target:
+        entity_id: timer.back_entrance_door_open_alert_timer
+
+- alias: Execute timer when back entrance door observation was reactivated and door is open
+  trigger:
+    - platform: state
+      entity_id: input_boolean.back_entrance_door_alarm_active
+      to: 'on'
+  condition:
+    - condition: state
+      entity_id: binary_sensor.back_entrance_door
+      state: 'on'
+  action:
+    - service: timer.start
+      target:
+        entity_id: timer.back_entrance_door_open_alert_timer
+      data:
+        duration: "{{ (states('input_number.back_entrance_door_open_alert_timeout') | int) * 60 }}"
+
+- alias: Stop back door alert timer when observation was disabled
+  trigger:
+    - platform: state
+      entity_id: input_boolean.back_entrance_door_alarm_active
+      to: 'off'
+  condition:
+    - condition: state
+      entity_id: timer.back_entrance_door_open_alert_timer
+      state: active
+  action:
+    - service: timer.cancel
+      target:
+        entity_id: timer.back_entrance_door_open_alert_timer
+
+
+# Patio door
+- alias: Execute timer when patio door was left open
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.door_sensor_3_contact
+      to: 'on'
+  condition:
+    - condition: state
+      entity_id: input_boolean.patio_door_alarm_active
+      state: 'on'
+  action:
+    - service: timer.start
+      target:
+        entity_id: timer.patio_door_open_alert_timer
+      data:
+        duration: "{{ (states('input_number.patio_door_open_alert_timeout') | int) * 60 }}"
+
+- alias: Cancel timer when patio door gets closed
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.door_sensor_3_contact
+      to: 'off'
+  condition:
+    - condition: state
+      entity_id: timer.patio_door_open_alert_timer
+      state: active
+  action:
+    - service: timer.cancel
+      target:
+        entity_id: timer.patio_door_open_alert_timer
+
+- alias: Execute timer when patio door observation was reactivated and door is open
+  trigger:
+    - platform: state
+      entity_id: input_boolean.patio_door_alarm_active
+      to: 'on'
+  condition:
+    - condition: state
+      entity_id: binary_sensor.door_sensor_3_contact
+      state: 'on'
+  action:
+    - service: timer.start
+      target:
+        entity_id: timer.patio_door_open_alert_timer
+      data:
+        duration: "{{ (states('input_number.patio_door_open_alert_timeout') | int) * 60 }}"
+
+- alias: Stop patio door alert timer when observation was disabled
+  trigger:
+    - platform: state
+      entity_id: input_boolean.patio_door_alarm_active
+      to: 'off'
+  condition:
+    - condition: state
+      entity_id: timer.patio_door_open_alert_timer
+      state: active
+  action:
+    - service: timer.cancel
+      target:
+        entity_id: timer.patio_door_open_alert_timer
+
+# Garage door
+- alias: Execute timer when garage door was left open
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.garage_door
+      to: 'on'
+  condition:
+    - condition: state
+      entity_id: input_boolean.garage_door_alarm_active
+      state: 'on'
+  action:
+    - service: timer.start
+      target:
+        entity_id: timer.garage_door_open_alert_timer
+      data:
+        duration: "{{ (states('input_number.garage_door_open_alert_timeout') | int) * 60 }}"
+
+- alias: Cancel timer when garage door gets closed
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.garage_door
+      to: 'off'
+  condition:
+    - condition: state
+      entity_id: timer.garage_door_open_alert_timer
+      state: active
+  action:
+    - service: timer.cancel
+      target:
+        entity_id: timer.garage_door_open_alert_timer
+
+- alias: Execute timer when garage door observation was reactivated and door is open
+  trigger:
+    - platform: state
+      entity_id: input_boolean.garage_door_alarm_active
+      to: 'on'
+  condition:
+    - condition: state
+      entity_id: binary_sensor.garage_door
+      state: 'on'
+  action:
+    - service: timer.start
+      target:
+        entity_id: timer.garage_door_open_alert_timer
+      data:
+        duration: "{{ (states('input_number.garage_door_open_alert_timeout') | int) * 60 }}"
+
+- alias: Stop garage door alert timer when observation was disabled
+  trigger:
+    - platform: state
+      entity_id: input_boolean.garage_door_alarm_active
+      to: 'off'
+  condition:
+    - condition: state
+      entity_id: timer.garage_door_open_alert_timer
+      state: active
+  action:
+    - service: timer.cancel
+      target:
+        entity_id: timer.garage_door_open_alert_timer

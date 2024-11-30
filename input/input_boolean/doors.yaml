@@ -1,8 +1,12 @@
-breakfast_room_door_alarm_alarm_active:
+back_entrance_door_alarm_active:
   name: Frühstückszimmer Tür Überwachung Aktiv
-garage_door_alarm_alarm_active:
+  initial: on
+garage_door_alarm_active:
   name: Gargentür Überwachung Aktiv
-front_door_alarm_alarm_active:
+  initial: on
+entrance_door_alarm_active:
   name: Haustür Überwachung Aktiv
-patio_door_alarm_alarm_active:
+  initial: on
+patio_door_alarm_active:
   name: Veranda Tür Überwachung Aktiv
+  initial: on

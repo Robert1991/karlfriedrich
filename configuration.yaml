@@ -14,6 +14,7 @@ alert: !include_dir_merge_named alerts/
 automation administration: !include automations/administration.yaml
 automation coffee_machine: !include automations/coffee_machine.yaml
 automation lights: !include automations/light_automations.yaml
+automation security: !include automations/security.yaml
 automation zigbee2mqtt: !include zigbee2mqtt/automations.yaml
 
 influxdb:
@@ -157,6 +158,7 @@ notify ios:
     platform: group
     services:
       - service: mobile_app_guidos_iphone
+      - service: mobile_app_monikas_iphone
 
 recorder:
   db_url: !secret maria_db_url
@@ -181,7 +183,13 @@ timer:
   zigbee_permit_join:
     name: Time remaining
     duration: 120
-  reactivated_oxygen_pump_timer:
+  entrance_door_open_alert_timer:
+    duration: "00:00:00"
+  back_entrance_door_open_alert_timer:
+    duration: "00:00:00"
+  garage_door_open_alert_timer:
+    duration: "00:00:00"
+  patio_door_open_alert_timer:
     duration: "00:00:00"
 
 zone:

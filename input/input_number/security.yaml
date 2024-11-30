@@ -1,0 +1,28 @@
+entrance_door_open_alert_timeout:
+    name: Entrance Door Open Alert Timeout
+    min: 1
+    max: 60
+    step: 1
+    unit_of_measurement: minutes
+
+back_entrance_door_open_alert_timeout:
+    name: Back Entrance Door Open Alert Timeout
+    min: 1
+    max: 60
+    step: 1
+    unit_of_measurement: minutes
+
+patio_door_open_alert_timeout:
+    name: Patio Door Open Alert Timeout
+    min: 1
+    max: 60
+    step: 1
+    unit_of_measurement: minutes
+
+
+garage_door_open_alert_timeout:
+    name: Garage Door Open Alert Timeout
+    min: 1
+    max: 60
+    step: 1
+    unit_of_measurement: minutes
