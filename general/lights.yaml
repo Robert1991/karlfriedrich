@@ -9,12 +9,13 @@
     - light.hue_iris_bubble
     - light.hue_white_lamp_1
     - light.hue_white_lamp_1_2
-    - light.light_3
+    - light.bankers_lamp
     - light.light_4
     - light.fruhstuckszimmer_wandlampe_1
     - light.breakfast_room_wall_light_2
     - light.breakfast_room_wall_light_3
     - light.esszimmer_vertico
+    - light.esszimmer_fensterbank
 - platform: group
   name: Breakfast Room Lights
   entities:

@@ -23,6 +23,10 @@ light.esszimmer_vertico:
   friendly_name: "Lampe auf Kommode"
   icon: "mdi:lamp"
 
+light.esszimmer_fensterbank:
+  friendly_name: "Lampe auf Fensterbank"
+  icon: "mdi:lamp"
+
 light.hue_iris_bubble_tragbar:
   friendly_name: "Philips Hue Licht Kugel Tragbar"
   icon: mdi:wall-sconce-round-variant

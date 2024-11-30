@@ -66,6 +66,9 @@ apps:
     - entity: light.esszimmer_vertico
       message: Esszimmer Vertico Lampe nicht erreichbar
       notify_every: 60
+    - entity: light.esszimmer_fensterbank
+      message: Esszimmer Vertico Lampe nicht erreichbar
+      notify_every: 60
     - entity: light.wohnzimmer_buffet_lampe
       message: Wohnzimmer Büffet nicht erreichbar
       notify_every: 60

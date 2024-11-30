@@ -117,7 +117,29 @@
         - 0.389
       mode: normal
       dynamics: none
-      friendly_name: Wohnzimmer Büffet Lampe
+      supported_features: 40
+      state: "on"
+    light.esszimmer_fensterbank:
+      min_mireds: 153
+      max_mireds: 500
+      supported_color_modes:
+        - color_temp
+        - xy
+      color_mode: color_temp
+      brightness: 133
+      color_temp: 437
+      hs_color:
+        - 29.496
+        - 80.799
+      rgb_color:
+        - 255
+        - 150
+        - 48
+      xy_color:
+        - 0.57
+        - 0.389
+      mode: normal
+      dynamics: none
       supported_features: 40
       state: "on"
     light.wohnzimmer_buffet_lampe:
@@ -208,7 +230,7 @@
       supported_features: 40
       icon: mdi:floor-lamp
       state: "on"
-    light.light_3:
+    light.bankers_lamp:
       supported_color_modes:
         - brightness
       mode: normal
@@ -349,6 +371,29 @@
       friendly_name: Wohnzimmer Büffet Lampe
       supported_features: 40
       state: "on"
+    light.esszimmer_fensterbank:
+      min_mireds: 153
+      max_mireds: 500
+      supported_color_modes:
+        - color_temp
+        - xy
+      color_mode: color_temp
+      brightness: 133
+      color_temp: 437
+      hs_color:
+        - 29.496
+        - 80.799
+      rgb_color:
+        - 255
+        - 150
+        - 48
+      xy_color:
+        - 0.57
+        - 0.389
+      mode: normal
+      dynamics: none
+      supported_features: 40
+      state: "on"
     light.wohnzimmer_buffet_lampe:
       supported_color_modes:
         - brightness
@@ -437,7 +482,7 @@
       supported_features: 40
       icon: mdi:floor-lamp
       state: "on"
-    light.light_3:
+    light.bankers_lamp:
       supported_color_modes:
         - brightness
       mode: normal

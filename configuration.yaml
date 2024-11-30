@@ -123,6 +123,8 @@ homekit:
         name: Kaffeemaschine
       light.outdoor_barbecue_light:
         name: Garten Lampe Grillplatz
+      light.bankers_lamp:
+        name: Ankleidezimmer Bankers Lamp
 http:
   login_attempts_threshold: 5
 
@@ -173,12 +175,6 @@ switch pond: !include pond/switches.yaml
 switch indoor_pool: !include indoor_pool/switches.yaml
 
 template: !include_dir_merge_list template/
-
-rest_command:
-  refresh_duckdns_ip:
-    url: >
-      {{ "https://www.duckdns.org/update?domains=" + states('sensor.duckdns_domain') + "&token=" + states('sensor.duckdns_access_token') + "&ip=" + states("sensor.fritz_box_7590_external_ip") }}"
-    method: GET
 
 timer:
   zigbee_permit_join:
