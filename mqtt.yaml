@@ -6,6 +6,13 @@ switch:
     payload_on: "true"
     payload_off: "false"
 sensor:
+  - name: Zigbee2mqtt Networkmap
+    state_topic: zigbee2mqtt/bridge/response/networkmap
+    value_template: >-
+        {{ now().strftime('%Y-%m-%d %H:%M:%S') }}
+    json_attributes_topic: zigbee2mqtt/bridge/response/networkmap
+    json_attributes_template: "{{ value_json.data.value | tojson }}"
+  # mobile alerts
   - name: "water_temperature_pond"
     state_topic: "MobileAlerts/066f14a80769/json"
     unit_of_measurement: "°C"
@@ -36,20 +43,3 @@ sensor:
     unit_of_measurement: "°C"
     value_template: "{{value_json.temperature[0]}}"
     icon: mdi:thermometer
-  - name: Zigbee2MQTT Bridge state
-    state_topic: "zigbee2mqtt/bridge/state"
-    icon: mdi:router-wireless
-  - name: Zigbee2MQTT Version
-    state_topic: "zigbee2mqtt/bridge/config"
-    value_template: "{{ value_json.version }}"
-    icon: mdi:zigbee
-  - name: Coordinator Version
-    state_topic: "zigbee2mqtt/bridge/config"
-    value_template: "{{ value_json.coordinator }}"
-    icon: mdi:chip
-  - name: Zigbee2mqtt Networkmap
-    state_topic: zigbee2mqtt/bridge/networkmap
-    value_template: >-
-      {{ now().strftime('%Y-%m-%d %H:%M:%S') }}
-    json_attributes_topic: zigbee2mqtt/bridge/response/networkmap
-    json_attributes_template: "{{ value_json.data.value | tojson }}"

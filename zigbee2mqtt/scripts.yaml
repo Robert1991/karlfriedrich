@@ -30,3 +30,28 @@ zigbee2mqtt_remove:
             "id": "{{ states.input_text.zigbee2mqtt_remove.state | string }}", 
             "force": {% if states.input_boolean.zigbee2mqtt_force_remove.state == "off" %}false{% else %}true{% endif %}
           }
+
+zigbee2mqtt_start_touchlink_scan:
+  alias: Zigbee2MQTT Touchlink Scan
+  sequence:
+    service: mqtt.publish
+    data_template:
+      topic: zigbee2mqtt/bridge/request/touchlink/scan
+      payload_template: "{}"
+
+zigbee2mqtt_touchlink_identify:
+  alias: Zigbee2MQTT Touchlink Identify
+  sequence:
+    service: mqtt.publish
+    data_template:
+      topic: zigbee2mqtt/bridge/request/touchlink/identify
+      payload: "{\n \"ieee_address\": \"{{ states.input_text.zigbee2mqtt_touchlink_ieee_address.state
+        | string }}\",\n  \"channel\": {{ states.input_number.zigbee2mqtt_touchlink_channel.state }}\n}"
+
+zigbee2mqtt_start_touchlink_factory_reset:
+  alias: Zigbee2MQTT Touchlink Factory Reset
+  sequence:
+    service: mqtt.publish
+    data_template:
+      topic: zigbee2mqtt/bridge/request/touchlink/factory_reset
+      payload: "{}"
