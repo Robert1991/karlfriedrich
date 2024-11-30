@@ -18,6 +18,16 @@ sensor:
     unit_of_measurement: "°C"
     value_template: "{{value_json.waterTemperature[0]}}"
     icon: mdi:thermometer
+  - name: "temperature_kitchen"
+    state_topic: "MobileAlerts/060612a85c80/json"
+    unit_of_measurement: "°C"
+    value_template: "{{value_json.temperature[0]}}"
+    icon: mdi:thermometer
+  - name: "humidity_kitchen"
+    state_topic: "MobileAlerts/060612a85c80/json"
+    unit_of_measurement: "%"
+    value_template: "{{value_json.humidity[0]}}"
+    icon: mdi:water-percent
   - name: "temperature_glasshouse"
     state_topic: "MobileAlerts/066f14a80769/json"
     unit_of_measurement: "°C"
