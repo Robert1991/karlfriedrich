@@ -15,6 +15,7 @@ passwd.dat
 .shopping_list.json
 .ssh/
 .cloud/
+www/community
 
 # esphome
 esphome/.esphome
